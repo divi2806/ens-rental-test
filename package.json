@@ -1,0 +1,22 @@
+{
+  "name": "ens-subdomain-rental",
+  "version": "1.0.0",
+  "description": "ENS Subdomain Rental Service - Rent subdomains to users",
+  "main": "index.js",
+  "scripts": {
+    "compile": "hardhat compile",
+    "test": "hardhat test"
+  },
+  "keywords": ["ens", "ethereum", "subdomain", "rental", "name-wrapper"],
+  "author": "",
+  "license": "MIT",
+  "devDependencies": {
+    "@nomicfoundation/hardhat-ethers": "^3.0.5",
+    "@nomicfoundation/hardhat-toolbox": "^4.0.0",
+    "hardhat": "^2.22.18"
+  },
+  "dependencies": {
+    "dotenv": "^16.4.1",
+    "ethers": "^6.16.0"
+  }
+}
