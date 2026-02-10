@@ -12,7 +12,7 @@ const NAME_WRAPPER = '0x0635513f179D50A207757E05759CbD106d7dFcE8';
 const PUBLIC_RESOLVER = '0x8FADE66B79cC9f707aB26799354482EB93a5B7dD';
 
 // YOUR DOMAIN HERE
-const DOMAIN = 'test282405.eth';  // Change this to your domain
+const DOMAIN = 'divicompany.eth';
 
 async function main() {
   console.log('\n🎁 Wrapping Your ENS Domain');
@@ -119,12 +119,18 @@ async function main() {
   console.log('   Benefits:');
   console.log('     ✅ Protocol-level subdomain expiry');
   console.log('     ✅ Fuses for guaranteed rental periods');
-  console.log('     ✅ ERC-1155 NFT standard\n');
+  console.log('     ✅ ERC-1155 NFT standard');
+  console.log('     🔒 CANNOT_UNWRAP fuse locks parent (required for subdomain protection)\n');
   
+  // CANNOT_UNWRAP (fuse=1) LOCKS the parent domain (irreversible until expiry)
+  // This is REQUIRED for PARENT_CANNOT_CONTROL to work on child subdomains
+  // Without it, parent owner could unwrap and bypass Name Wrapper protections
+  const CANNOT_UNWRAP = 1;
+
   const wrapTx = await wrapper.wrapETH2LD(
     label,
     signer.address,
-    0, // No fuses for parent
+    CANNOT_UNWRAP,
     PUBLIC_RESOLVER
   );
   
