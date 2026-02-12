@@ -1,0 +1,43 @@
+WARNING: You are currently using Node.js v25.5.0, which is not supported by Hardhat. This can lead to unexpected behavior. See https://v2.hardhat.org/nodejs-versions
+
+
+
+🚀 Deploying OffchainResolver
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 
+
+Deployer: 0x8d674BaEcbA928C9d750f66b0b4A35b83cAFd595
+Balance: 9.697900670714987938 ETH
+
+Configuration:
+  Domain: divicompany.eth
+  Gateway URL: http://localhost:3001/{sender}/{data}.json
+  Signer (deployer): 0x8d674BaEcbA928C9d750f66b0b4A35b83cAFd595 
+
+📝 Deploying OffchainResolver...
+
+✅ OffchainResolver deployed!
+   Address: 0x69d89c8e75FA7F98dcB2295F73A2f91e216550c4 
+
+🔍 Verifying deployment...
+   URL: http://localhost:3001/{sender}/{data}.json
+   Deployer is signer: true
+   Owner: 0x8d674BaEcbA928C9d750f66b0b4A35b83cAFd595
+   Owner match: ✅ 
+
+   Supports IExtendedResolver: ✅ 
+
+💾 Config saved
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+✅ OFFCHAIN RESOLVER DEPLOYED!
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+🎯 Next Steps:
+   1. Start the gateway:
+      PRIVATE_KEY=... node gateway/server.js
+   2. Rent subdomains & set resolver:
+      npx hardhat run scripts/06-register-and-setup-subdomains.js --network sepolia
+
+📍 Contract: 0x69d89c8e75FA7F98dcB2295F73A2f91e216550c4
+📍 Etherscan: https://sepolia.etherscan.io/address/0x69d89c8e75FA7F98dcB2295F73A2f91e216550c4 
+

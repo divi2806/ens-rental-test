@@ -5,9 +5,17 @@
   "main": "index.js",
   "scripts": {
     "compile": "hardhat compile",
-    "test": "hardhat test"
+    "test": "hardhat test",
+    "gateway": "node gateway/server.js",
+    "gateway:dev": "node --watch gateway/server.js"
   },
-  "keywords": ["ens", "ethereum", "subdomain", "rental", "name-wrapper"],
+  "keywords": [
+    "ens",
+    "ethereum",
+    "subdomain",
+    "rental",
+    "name-wrapper"
+  ],
   "author": "",
   "license": "MIT",
   "devDependencies": {
@@ -16,7 +24,10 @@
     "hardhat": "^2.22.18"
   },
   "dependencies": {
+    "@openzeppelin/contracts": "^5.4.0",
+    "cors": "^2.8.6",
     "dotenv": "^16.4.1",
-    "ethers": "^6.16.0"
+    "ethers": "^6.16.0",
+    "express": "^5.2.1"
   }
 }

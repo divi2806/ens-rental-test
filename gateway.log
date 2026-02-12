@@ -1,0 +1,24 @@
+
+> ens-subdomain-rental@1.0.0 gateway
+> node gateway/server.js
+
+
+============================================================
+  CCIP-Read Gateway
+============================================================
+  Port:    3001
+  Signer:  0x8d674BaEcbA928C9d750f66b0b4A35b83cAFd595
+  Log:     /Users/divyansh/Desktop/RegistryChain/ens-subdomain-rental/subdomain-registrations.log
+============================================================
+
+Endpoints:
+  GET  http://localhost:3001/health
+  GET  http://localhost:3001/subdomains
+  POST http://localhost:3001/register
+  GET  http://localhost:3001/:sender/:callData.json  (CCIP-Read)
+  POST http://localhost:3001/rpc                     (CCIP-Read)
+
+[2026-02-12T05:02:15.356Z] Gateway started {"port":3001,"signer":"0x8d674BaEcbA928C9d750f66b0b4A35b83cAFd595"}
+[2026-02-12T05:02:35.046Z] Subdomain registered {"name":"1.test.divicompany.eth","parent":"test.divicompany.eth","label":"1","addr":"0x8d674BaEcbA928C9d750f66b0b4A35b83cAFd595","texts":{"com.twitter":"@divicompany","description":"First offchain subdomain under test.divicompany.eth","url":"https://divicompany.eth"},"contenthash":null,"registeredAt":"2026-02-12T05:02:35.046Z"}
+[2026-02-12T05:02:35.049Z] Subdomain registered {"name":"alice.test.divicompany.eth","parent":"test.divicompany.eth","label":"alice","addr":"0x8d674BaEcbA928C9d750f66b0b4A35b83cAFd595","texts":{"com.twitter":"@alice","description":"Alice's offchain subdomain"},"contenthash":null,"registeredAt":"2026-02-12T05:02:35.049Z"}
+[2026-02-12T05:02:35.050Z] Subdomain registered {"name":"a.test2.divicompany.eth","parent":"test2.divicompany.eth","label":"a","addr":"0x8d674BaEcbA928C9d750f66b0b4A35b83cAFd595","texts":{"description":"First offchain subdomain under test2.divicompany.eth"},"contenthash":null,"registeredAt":"2026-02-12T05:02:35.050Z"}

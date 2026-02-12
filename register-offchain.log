@@ -1,0 +1,9 @@
+
+🌐 Registering Offchain Sub-subdomains
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+Gateway: http://localhost:3001
+
+❌ Gateway is not running!
+   Start it with: PRIVATE_KEY=... node gateway/server.js
+   Expected at: http://localhost:3001
+

@@ -1,0 +1,49 @@
+WARNING: You are currently using Node.js v25.5.0, which is not supported by Hardhat. This can lead to unexpected behavior. See https://v2.hardhat.org/nodejs-versions
+
+
+
+🚀 Registering Subdomains & Setting OffchainResolver
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 
+
+Deployer: 0x8d674BaEcbA928C9d750f66b0b4A35b83cAFd595
+Balance: 9.691879172551742748 ETH
+
+Configuration:
+  Domain: divicompany.eth
+  Registrar: 0xa589676a3a68824774Dce210f3448cE1750f676e
+  OffchainResolver: 0x69d89c8e75FA7F98dcB2295F73A2f91e216550c4
+  Name Wrapper: 0x0635513f179D50A207757E05759CbD106d7dFcE8 
+
+Rental price: 0.001 ETH
+
+
+──────────────────────────────────────────────────
+📝 Processing: test.divicompany.eth
+   Node: 0x100c605da9c627fef49b114d682ff596b16f3e47df8401864fe81997e415b861
+   Status: Available — renting...
+   TX: 0x834312a9ec607c841897197de7da06549f403e5a711b128594a10b1d8ceb0609
+   ✅ Rented!
+   Setting resolver → 0x69d89c8e75FA7F98dcB2295F73A2f91e216550c4
+   TX: 0x9b31acf2b853728ca670d18f0e47fba6bd3cc30f028137a08084a05368dfe2f3
+   ✅ Resolver set!
+
+──────────────────────────────────────────────────
+📝 Processing: test2.divicompany.eth
+   Node: 0x9cebf732803f7b7a3b80e9c9e310f6f9954e1d9001d57fec3591ee81c8ad6cb1
+   Status: Available — renting...
+   TX: 0xe46ff42c75dda8102659c39081b32fb8a68657b8b5611a461679f14606922317
+   ✅ Rented!
+   Setting resolver → 0x69d89c8e75FA7F98dcB2295F73A2f91e216550c4
+   TX: 0xb3cd87b106b85d6e18fd5ad9163b1be349f39cca65cff1d7f70da39ee5bd9081
+   ✅ Resolver set!
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+✅ SETUP COMPLETE!
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+🎯 Next Steps:
+   1. Start the gateway (if not running):
+      PRIVATE_KEY=... node gateway/server.js
+   2. Register offchain sub-subdomains:
+      node scripts/07-register-offchain-subdomains.js
+
