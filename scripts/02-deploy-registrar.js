@@ -1,9 +1,10 @@
 const hre = require('hardhat');
 const ethers = hre.ethers;
+const { upgrades } = require('hardhat');
 const fs = require('fs');
 
 /**
- * Step 2: Deploy SubnameRegistrar contract
+ * Step 2: Deploy SubnameRegistrar contract (UUPS Proxy)
  */
 
 const NAME_WRAPPER = '0x0635513f179D50A207757E05759CbD106d7dFcE8';
@@ -36,20 +37,23 @@ async function main() {
   console.log('  Domain Hash:', config.domainHash);
   console.log('  Name Wrapper:', NAME_WRAPPER, '\n');
 
-  // Deploy
-  console.log('📝 Deploying SubnameRegistrar...\n');
+  // Deploy with UUPS proxy
+  console.log('📝 Deploying SubnameRegistrar (UUPS Proxy)...\n');
   
   const SubnameRegistrar = await ethers.getContractFactory('SubnameRegistrar');
-  const registrar = await SubnameRegistrar.deploy(
-    NAME_WRAPPER,
-    config.domainHash
+  const registrar = await upgrades.deployProxy(
+    SubnameRegistrar,
+    [NAME_WRAPPER, config.domainHash, deployer.address],
+    { kind: 'uups' }
   );
   
   await registrar.waitForDeployment();
-  const contractAddress = await registrar.getAddress();
+  const proxyAddress = await registrar.getAddress();
+  const implementationAddress = await upgrades.erc1967.getImplementationAddress(proxyAddress);
   
   console.log('✅ SubnameRegistrar deployed!');
-  console.log('   Address:', contractAddress, '\n');
+  console.log('   Proxy Address:', proxyAddress);
+  console.log('   Implementation Address:', implementationAddress, '\n');
 
   // Verify deployment
   console.log('🔍 Verifying deployment...');
@@ -63,7 +67,8 @@ async function main() {
   console.log('   Match:', owner.toLowerCase() === deployer.address.toLowerCase() ? '✅' : '❌\n');
 
   // Update config
-  config.registrarAddress = contractAddress;
+  config.registrarAddress = proxyAddress;
+  config.registrarImplementation = implementationAddress;
   config.rentalPrice = ethers.formatEther(rentalPrice);
   config.deployedAt = new Date().toISOString();
   fs.writeFileSync('./config.json', JSON.stringify(config, null, 2));
@@ -71,14 +76,15 @@ async function main() {
   console.log('💾 Config saved\n');
   
   console.log('━'.repeat(60));
-  console.log('✅ DEPLOYMENT COMPLETE!');
+  console.log('✅ DEPLOYMENT COMPLETE (UPGRADEABLE)!');
   console.log('━'.repeat(60));
   console.log('\n🎯 Next Step:');
   console.log('   Setup permissions:');
   console.log('   npx hardhat run scripts/03-setup-permissions.js --network sepolia\n');
   
-  console.log('📍 Contract:', contractAddress);
-  console.log('📍 Etherscan: https://sepolia.etherscan.io/address/' + contractAddress, '\n');
+  console.log('📍 Proxy:', proxyAddress);
+  console.log('📍 Implementation:', implementationAddress);
+  console.log('📍 Etherscan: https://sepolia.etherscan.io/address/' + proxyAddress, '\n');
 }
 
 main()

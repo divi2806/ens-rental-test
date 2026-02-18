@@ -1,0 +1,509 @@
+{
+  "manifestVersion": "3.2",
+  "proxies": [
+    {
+      "address": "0xEbb46841B70ba10BBA83C08B0460Fe0Ae8CE6aD7",
+      "txHash": "0x3b6eb62e118fc893bf48d2b9ed82912d9f519a6d9122bcce389c1fc85ea019d0",
+      "kind": "uups"
+    },
+    {
+      "address": "0x6Dea337D5BDBCe2DB66196AbA020bC02e6193b2d",
+      "txHash": "0x1bbd01c65cb2641607c0868eedfa61019b291f6e6cb1c837425e0d8532e81d17",
+      "kind": "uups"
+    },
+    {
+      "address": "0x80D29c7d6b0fe927a04E0d561E53063B91d7a48f",
+      "txHash": "0x5c9f9917b92661b7cc1ab9974808c417ef1c602a64aef46c05decc69106dcb9f",
+      "kind": "uups"
+    },
+    {
+      "address": "0xE417a07A7b40fD9A8E54615541Ac6280f5A272FE",
+      "txHash": "0x3196010c2a4badc8b5594337d56da2f29381ffbd379818d900ec733c687cce15",
+      "kind": "uups"
+    },
+    {
+      "address": "0xeBa8b11aD69abD273A05b9F5AE64FE7381fd2755",
+      "txHash": "0x751a08e6b38a7a01e58343a860b7ccfd1124a317d239c3ba621444099fd4b27b",
+      "kind": "uups"
+    },
+    {
+      "address": "0x67B4DDd24b2f00285018530ab72127BCEAFbFADd",
+      "txHash": "0x4283d5eecc7f3fece0aebb26be2eb868a0e6f7d4a082f06f60c92bb7f18685be",
+      "kind": "uups"
+    }
+  ],
+  "impls": {
+    "aa332293371dddfc3cbf9f04e1e80204e9cc4d49748f39091a2eaf60f1f2f380": {
+      "address": "0x6031bb45a2B1a2BDd4991164c72721f29936dbeB",
+      "txHash": "0xf4a6a781f93cc10b8197c7b01206512accad1361c3fc1bca72bc1f5799c19541",
+      "layout": {
+        "solcVersion": "0.8.22",
+        "storage": [
+          {
+            "label": "nameWrapper",
+            "offset": 0,
+            "slot": "0",
+            "type": "t_contract(INameWrapper)7295",
+            "contract": "SubnameRegistrar",
+            "src": "contracts/SubnameRegistrar.sol:47"
+          },
+          {
+            "label": "parentNode",
+            "offset": 0,
+            "slot": "1",
+            "type": "t_bytes32",
+            "contract": "SubnameRegistrar",
+            "src": "contracts/SubnameRegistrar.sol:50"
+          },
+          {
+            "label": "rentalPrice",
+            "offset": 0,
+            "slot": "2",
+            "type": "t_uint256",
+            "contract": "SubnameRegistrar",
+            "src": "contracts/SubnameRegistrar.sol:53"
+          },
+          {
+            "label": "rentalDuration",
+            "offset": 0,
+            "slot": "3",
+            "type": "t_uint256",
+            "contract": "SubnameRegistrar",
+            "src": "contracts/SubnameRegistrar.sol:54"
+          },
+          {
+            "label": "rentals",
+            "offset": 0,
+            "slot": "4",
+            "type": "t_mapping(t_string_memory_ptr,t_struct(Rental)7323_storage)",
+            "contract": "SubnameRegistrar",
+            "src": "contracts/SubnameRegistrar.sol:69"
+          }
+        ],
+        "types": {
+          "t_address": {
+            "label": "address",
+            "numberOfBytes": "20"
+          },
+          "t_bool": {
+            "label": "bool",
+            "numberOfBytes": "1"
+          },
+          "t_struct(InitializableStorage)73_storage": {
+            "label": "struct Initializable.InitializableStorage",
+            "members": [
+              {
+                "label": "_initialized",
+                "type": "t_uint64",
+                "offset": 0,
+                "slot": "0"
+              },
+              {
+                "label": "_initializing",
+                "type": "t_bool",
+                "offset": 8,
+                "slot": "0"
+              }
+            ],
+            "numberOfBytes": "32"
+          },
+          "t_struct(OwnableStorage)13_storage": {
+            "label": "struct OwnableUpgradeable.OwnableStorage",
+            "members": [
+              {
+                "label": "_owner",
+                "type": "t_address",
+                "offset": 0,
+                "slot": "0"
+              }
+            ],
+            "numberOfBytes": "32"
+          },
+          "t_uint64": {
+            "label": "uint64",
+            "numberOfBytes": "8"
+          },
+          "t_bytes32": {
+            "label": "bytes32",
+            "numberOfBytes": "32"
+          },
+          "t_contract(INameWrapper)7295": {
+            "label": "contract INameWrapper",
+            "numberOfBytes": "20"
+          },
+          "t_mapping(t_string_memory_ptr,t_struct(Rental)7323_storage)": {
+            "label": "mapping(string => struct SubnameRegistrar.Rental)",
+            "numberOfBytes": "32"
+          },
+          "t_string_memory_ptr": {
+            "label": "string",
+            "numberOfBytes": "32"
+          },
+          "t_struct(Rental)7323_storage": {
+            "label": "struct SubnameRegistrar.Rental",
+            "members": [
+              {
+                "label": "renter",
+                "type": "t_address",
+                "offset": 0,
+                "slot": "0"
+              },
+              {
+                "label": "expiryTime",
+                "type": "t_uint64",
+                "offset": 20,
+                "slot": "0"
+              },
+              {
+                "label": "active",
+                "type": "t_bool",
+                "offset": 28,
+                "slot": "0"
+              }
+            ],
+            "numberOfBytes": "32"
+          },
+          "t_uint256": {
+            "label": "uint256",
+            "numberOfBytes": "32"
+          },
+          "t_string_storage": {
+            "label": "string"
+          }
+        },
+        "namespaces": {
+          "erc7201:openzeppelin.storage.Ownable": [
+            {
+              "contract": "OwnableUpgradeable",
+              "label": "_owner",
+              "type": "t_address",
+              "src": "@openzeppelin/contracts-upgradeable/access/OwnableUpgradeable.sol:24",
+              "offset": 0,
+              "slot": "0"
+            }
+          ],
+          "erc7201:openzeppelin.storage.Initializable": [
+            {
+              "contract": "Initializable",
+              "label": "_initialized",
+              "type": "t_uint64",
+              "src": "@openzeppelin/contracts-upgradeable/proxy/utils/Initializable.sol:69",
+              "offset": 0,
+              "slot": "0"
+            },
+            {
+              "contract": "Initializable",
+              "label": "_initializing",
+              "type": "t_bool",
+              "src": "@openzeppelin/contracts-upgradeable/proxy/utils/Initializable.sol:73",
+              "offset": 8,
+              "slot": "0"
+            }
+          ]
+        }
+      }
+    },
+    "f5e9cfa7a9b8a80ce3e8a5df8fa001dbceba0e734d1d25014a09ba166e9decdf": {
+      "address": "0x43be006C85CACB15E8073B9aF5dEc84792C81ba1",
+      "txHash": "0x880666fd26e72d90674caeb40b6019e3de74742f00b243ce2ba9d2307e971517",
+      "layout": {
+        "solcVersion": "0.8.22",
+        "storage": [
+          {
+            "label": "url",
+            "offset": 0,
+            "slot": "0",
+            "type": "t_string_storage",
+            "contract": "OffchainResolver",
+            "src": "contracts/OffchainResolver.sol:35"
+          },
+          {
+            "label": "signers",
+            "offset": 0,
+            "slot": "1",
+            "type": "t_mapping(t_address,t_bool)",
+            "contract": "OffchainResolver",
+            "src": "contracts/OffchainResolver.sol:38"
+          }
+        ],
+        "types": {
+          "t_address": {
+            "label": "address",
+            "numberOfBytes": "20"
+          },
+          "t_bool": {
+            "label": "bool",
+            "numberOfBytes": "1"
+          },
+          "t_struct(InitializableStorage)73_storage": {
+            "label": "struct Initializable.InitializableStorage",
+            "members": [
+              {
+                "label": "_initialized",
+                "type": "t_uint64",
+                "offset": 0,
+                "slot": "0"
+              },
+              {
+                "label": "_initializing",
+                "type": "t_bool",
+                "offset": 8,
+                "slot": "0"
+              }
+            ],
+            "numberOfBytes": "32"
+          },
+          "t_struct(OwnableStorage)13_storage": {
+            "label": "struct OwnableUpgradeable.OwnableStorage",
+            "members": [
+              {
+                "label": "_owner",
+                "type": "t_address",
+                "offset": 0,
+                "slot": "0"
+              }
+            ],
+            "numberOfBytes": "32"
+          },
+          "t_uint64": {
+            "label": "uint64",
+            "numberOfBytes": "8"
+          },
+          "t_mapping(t_address,t_bool)": {
+            "label": "mapping(address => bool)",
+            "numberOfBytes": "32"
+          },
+          "t_string_storage": {
+            "label": "string",
+            "numberOfBytes": "32"
+          }
+        },
+        "namespaces": {
+          "erc7201:openzeppelin.storage.Ownable": [
+            {
+              "contract": "OwnableUpgradeable",
+              "label": "_owner",
+              "type": "t_address",
+              "src": "@openzeppelin/contracts-upgradeable/access/OwnableUpgradeable.sol:24",
+              "offset": 0,
+              "slot": "0"
+            }
+          ],
+          "erc7201:openzeppelin.storage.Initializable": [
+            {
+              "contract": "Initializable",
+              "label": "_initialized",
+              "type": "t_uint64",
+              "src": "@openzeppelin/contracts-upgradeable/proxy/utils/Initializable.sol:69",
+              "offset": 0,
+              "slot": "0"
+            },
+            {
+              "contract": "Initializable",
+              "label": "_initializing",
+              "type": "t_bool",
+              "src": "@openzeppelin/contracts-upgradeable/proxy/utils/Initializable.sol:73",
+              "offset": 8,
+              "slot": "0"
+            }
+          ]
+        }
+      }
+    },
+    "05eee5cea3af710382fb0572a4be21e7b33c81e4dcb32f38afe1597d889b67b5": {
+      "address": "0x57d082307Aeff174C41547f0B03C63E95952cB8a",
+      "txHash": "0xff20c964b84e5afd778bca96a0b8d055232dffaeef41c6a970c1d50049d1eb7f",
+      "layout": {
+        "solcVersion": "0.8.22",
+        "storage": [
+          {
+            "label": "ensRegistry",
+            "offset": 0,
+            "slot": "0",
+            "type": "t_contract(IENSRegistry)7814",
+            "contract": "SubnameRegistrarDirect",
+            "src": "contracts/SubnameRegistrarDirect.sol:33"
+          },
+          {
+            "label": "resolver",
+            "offset": 0,
+            "slot": "1",
+            "type": "t_contract(IResolver)7822",
+            "contract": "SubnameRegistrarDirect",
+            "src": "contracts/SubnameRegistrarDirect.sol:34"
+          },
+          {
+            "label": "parentNode",
+            "offset": 0,
+            "slot": "2",
+            "type": "t_bytes32",
+            "contract": "SubnameRegistrarDirect",
+            "src": "contracts/SubnameRegistrarDirect.sol:35"
+          },
+          {
+            "label": "rentalPrice",
+            "offset": 0,
+            "slot": "3",
+            "type": "t_uint256",
+            "contract": "SubnameRegistrarDirect",
+            "src": "contracts/SubnameRegistrarDirect.sol:38"
+          },
+          {
+            "label": "rentalDuration",
+            "offset": 0,
+            "slot": "4",
+            "type": "t_uint256",
+            "contract": "SubnameRegistrarDirect",
+            "src": "contracts/SubnameRegistrarDirect.sol:39"
+          },
+          {
+            "label": "rentals",
+            "offset": 0,
+            "slot": "5",
+            "type": "t_mapping(t_string_memory_ptr,t_struct(Rental)7847_storage)",
+            "contract": "SubnameRegistrarDirect",
+            "src": "contracts/SubnameRegistrarDirect.sol:48"
+          },
+          {
+            "label": "nodeToLabel",
+            "offset": 0,
+            "slot": "6",
+            "type": "t_mapping(t_bytes32,t_string_storage)",
+            "contract": "SubnameRegistrarDirect",
+            "src": "contracts/SubnameRegistrarDirect.sol:49"
+          }
+        ],
+        "types": {
+          "t_address": {
+            "label": "address",
+            "numberOfBytes": "20"
+          },
+          "t_bool": {
+            "label": "bool",
+            "numberOfBytes": "1"
+          },
+          "t_struct(InitializableStorage)73_storage": {
+            "label": "struct Initializable.InitializableStorage",
+            "members": [
+              {
+                "label": "_initialized",
+                "type": "t_uint64",
+                "offset": 0,
+                "slot": "0"
+              },
+              {
+                "label": "_initializing",
+                "type": "t_bool",
+                "offset": 8,
+                "slot": "0"
+              }
+            ],
+            "numberOfBytes": "32"
+          },
+          "t_struct(OwnableStorage)13_storage": {
+            "label": "struct OwnableUpgradeable.OwnableStorage",
+            "members": [
+              {
+                "label": "_owner",
+                "type": "t_address",
+                "offset": 0,
+                "slot": "0"
+              }
+            ],
+            "numberOfBytes": "32"
+          },
+          "t_uint64": {
+            "label": "uint64",
+            "numberOfBytes": "8"
+          },
+          "t_bytes32": {
+            "label": "bytes32",
+            "numberOfBytes": "32"
+          },
+          "t_contract(IENSRegistry)7814": {
+            "label": "contract IENSRegistry",
+            "numberOfBytes": "20"
+          },
+          "t_contract(IResolver)7822": {
+            "label": "contract IResolver",
+            "numberOfBytes": "20"
+          },
+          "t_mapping(t_bytes32,t_string_storage)": {
+            "label": "mapping(bytes32 => string)",
+            "numberOfBytes": "32"
+          },
+          "t_mapping(t_string_memory_ptr,t_struct(Rental)7847_storage)": {
+            "label": "mapping(string => struct SubnameRegistrarDirect.Rental)",
+            "numberOfBytes": "32"
+          },
+          "t_string_memory_ptr": {
+            "label": "string",
+            "numberOfBytes": "32"
+          },
+          "t_string_storage": {
+            "label": "string",
+            "numberOfBytes": "32"
+          },
+          "t_struct(Rental)7847_storage": {
+            "label": "struct SubnameRegistrarDirect.Rental",
+            "members": [
+              {
+                "label": "renter",
+                "type": "t_address",
+                "offset": 0,
+                "slot": "0"
+              },
+              {
+                "label": "expiryTime",
+                "type": "t_uint64",
+                "offset": 20,
+                "slot": "0"
+              },
+              {
+                "label": "active",
+                "type": "t_bool",
+                "offset": 28,
+                "slot": "0"
+              }
+            ],
+            "numberOfBytes": "32"
+          },
+          "t_uint256": {
+            "label": "uint256",
+            "numberOfBytes": "32"
+          }
+        },
+        "namespaces": {
+          "erc7201:openzeppelin.storage.Ownable": [
+            {
+              "contract": "OwnableUpgradeable",
+              "label": "_owner",
+              "type": "t_address",
+              "src": "@openzeppelin/contracts-upgradeable/access/OwnableUpgradeable.sol:24",
+              "offset": 0,
+              "slot": "0"
+            }
+          ],
+          "erc7201:openzeppelin.storage.Initializable": [
+            {
+              "contract": "Initializable",
+              "label": "_initialized",
+              "type": "t_uint64",
+              "src": "@openzeppelin/contracts-upgradeable/proxy/utils/Initializable.sol:69",
+              "offset": 0,
+              "slot": "0"
+            },
+            {
+              "contract": "Initializable",
+              "label": "_initializing",
+              "type": "t_bool",
+              "src": "@openzeppelin/contracts-upgradeable/proxy/utils/Initializable.sol:73",
+              "offset": 8,
+              "slot": "0"
+            }
+          ]
+        }
+      }
+    }
+  }
+}

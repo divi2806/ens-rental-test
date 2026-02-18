@@ -1,12 +1,15 @@
 const hre = require('hardhat');
 const ethers = hre.ethers;
+const { upgrades } = require('hardhat');
 const fs = require('fs');
 
 /**
- * Step 5: Deploy OffchainResolver contract
+ * Step 5: Deploy OffchainResolver contract (UUPS Proxy)
  *
  * The resolver reverts with OffchainLookup (ERC-3668) to direct ENS clients
  * to our CCIP-Read gateway for sub-subdomain resolution.
+ * 
+ * Now deployed as upgradeable proxy using UUPS pattern.
  */
 
 // Gateway URL template — {sender} and {data} are replaced by the CCIP-Read client
@@ -35,17 +38,23 @@ async function main() {
   console.log('  Gateway URL:', GATEWAY_URL);
   console.log('  Signer (deployer):', deployer.address, '\n');
 
-  // Deploy
-  console.log('📝 Deploying OffchainResolver...\n');
+  // Deploy with UUPS proxy
+  console.log('📝 Deploying OffchainResolver (UUPS Proxy)...\n');
 
   const OffchainResolver = await ethers.getContractFactory('OffchainResolver');
-  const resolver = await OffchainResolver.deploy(GATEWAY_URL, deployer.address);
+  const resolver = await upgrades.deployProxy(
+    OffchainResolver,
+    [GATEWAY_URL, deployer.address, deployer.address],
+    { kind: 'uups' }
+  );
 
   await resolver.waitForDeployment();
-  const contractAddress = await resolver.getAddress();
+  const proxyAddress = await resolver.getAddress();
+  const implementationAddress = await upgrades.erc1967.getImplementationAddress(proxyAddress);
 
   console.log('✅ OffchainResolver deployed!');
-  console.log('   Address:', contractAddress, '\n');
+  console.log('   Proxy Address:', proxyAddress);
+  console.log('   Implementation Address:', implementationAddress, '\n');
 
   // Verify deployment
   console.log('🔍 Verifying deployment...');
@@ -63,7 +72,8 @@ async function main() {
   console.log('   Supports IExtendedResolver:', supportsExtended ? '✅' : '❌', '\n');
 
   // Update config
-  config.offchainResolverAddress = contractAddress;
+  config.offchainResolverAddress = proxyAddress;
+  config.offchainResolverImplementation = implementationAddress;
   config.gatewayUrl = GATEWAY_URL;
   config.offchainResolverDeployedAt = new Date().toISOString();
   fs.writeFileSync('./config.json', JSON.stringify(config, null, 2));
@@ -71,7 +81,7 @@ async function main() {
   console.log('💾 Config saved\n');
 
   console.log('━'.repeat(60));
-  console.log('✅ OFFCHAIN RESOLVER DEPLOYED!');
+  console.log('✅ OFFCHAIN RESOLVER DEPLOYED (UPGRADEABLE)!');
   console.log('━'.repeat(60));
   console.log('\n🎯 Next Steps:');
   console.log('   1. Start the gateway:');
@@ -79,8 +89,9 @@ async function main() {
   console.log('   2. Rent subdomains & set resolver:');
   console.log('      npx hardhat run scripts/06-register-and-setup-subdomains.js --network sepolia\n');
 
-  console.log('📍 Contract:', contractAddress);
-  console.log('📍 Etherscan: https://sepolia.etherscan.io/address/' + contractAddress, '\n');
+  console.log('📍 Proxy:', proxyAddress);
+  console.log('📍 Implementation:', implementationAddress);
+  console.log('📍 Etherscan: https://sepolia.etherscan.io/address/' + proxyAddress, '\n');
 }
 
 main()

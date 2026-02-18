@@ -1,9 +1,10 @@
 const hre = require('hardhat');
 const ethers = hre.ethers;
+const { upgrades } = require('hardhat');
 const fs = require('fs');
 
 /**
- * Step 2: Deploy SubnameRegistrarDirect
+ * Step 2: Deploy SubnameRegistrarDirect (UUPS Proxy)
  */
 
 const ENS_REGISTRY = '0x00000000000C2E074eC69A0dFb2997BA6C7d2e1e';
@@ -33,21 +34,23 @@ async function main() {
   console.log('  ENS Registry:', ENS_REGISTRY);
   console.log('  Resolver:', PUBLIC_RESOLVER, '\n');
 
-  // Deploy
-  console.log('📝 Deploying SubnameRegistrarDirect...\n');
+  // Deploy with UUPS proxy
+  console.log('📝 Deploying SubnameRegistrarDirect (UUPS Proxy)...\n');
   
   const SubnameRegistrarDirect = await ethers.getContractFactory('SubnameRegistrarDirect');
-  const registrar = await SubnameRegistrarDirect.deploy(
-    ENS_REGISTRY,
-    PUBLIC_RESOLVER,
-    config.domainHash
+  const registrar = await upgrades.deployProxy(
+    SubnameRegistrarDirect,
+    [ENS_REGISTRY, PUBLIC_RESOLVER, config.domainHash, deployer.address],
+    { kind: 'uups' }
   );
   
   await registrar.waitForDeployment();
-  const contractAddress = await registrar.getAddress();
+  const proxyAddress = await registrar.getAddress();
+  const implementationAddress = await upgrades.erc1967.getImplementationAddress(proxyAddress);
   
   console.log('✅ SubnameRegistrarDirect deployed!');
-  console.log('   Address:', contractAddress, '\n');
+  console.log('   Proxy Address:', proxyAddress);
+  console.log('   Implementation Address:', implementationAddress, '\n');
 
   // Verify deployment
   console.log('🔍 Verifying deployment...');
@@ -61,7 +64,8 @@ async function main() {
   console.log('   Match:', owner.toLowerCase() === deployer.address.toLowerCase() ? '✅' : '❌\n');
 
   // Update config
-  config.registrarAddress = contractAddress;
+  config.registrarAddress = proxyAddress;
+  config.registrarImplementation = implementationAddress;
   config.rentalPrice = ethers.formatEther(rentalPrice);
   config.deployedAt = new Date().toISOString();
   fs.writeFileSync('./config.json', JSON.stringify(config, null, 2));
@@ -69,14 +73,15 @@ async function main() {
   console.log('💾 Config saved\n');
   
   console.log('━'.repeat(60));
-  console.log('✅ DEPLOYMENT COMPLETE!');
+  console.log('✅ DEPLOYMENT COMPLETE (UPGRADEABLE)!');
   console.log('━'.repeat(60));
   console.log('\n🎯 Next Step:');
   console.log('   Transfer domain ownership to contract:');
   console.log('   npx hardhat run scripts/03-transfer-ownership.js --network sepolia\n');
   
-  console.log('📍 Contract:', contractAddress);
-  console.log('📍 Etherscan: https://sepolia.etherscan.io/address/' + contractAddress, '\n');
+  console.log('📍 Proxy:', proxyAddress);
+  console.log('📍 Implementation:', implementationAddress);
+  console.log('📍 Etherscan: https://sepolia.etherscan.io/address/' + proxyAddress, '\n');
 }
 
 main()

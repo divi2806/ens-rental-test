@@ -1,6 +1,561 @@
-{"timestamp":"2026-02-12T04:57:32.584Z","message":"Gateway started","port":3001,"signer":"0x8d674BaEcbA928C9d750f66b0b4A35b83cAFd595"}
-{"timestamp":"2026-02-12T04:58:26.670Z","message":"Gateway started","port":3001,"signer":"0x8d674BaEcbA928C9d750f66b0b4A35b83cAFd595"}
-{"timestamp":"2026-02-12T05:02:15.356Z","message":"Gateway started","port":3001,"signer":"0x8d674BaEcbA928C9d750f66b0b4A35b83cAFd595"}
-{"timestamp":"2026-02-12T05:02:35.046Z","message":"Subdomain registered","name":"1.test.divicompany.eth","parent":"test.divicompany.eth","label":"1","addr":"0x8d674BaEcbA928C9d750f66b0b4A35b83cAFd595","texts":{"com.twitter":"@divicompany","description":"First offchain subdomain under test.divicompany.eth","url":"https://divicompany.eth"},"contenthash":null,"registeredAt":"2026-02-12T05:02:35.046Z"}
-{"timestamp":"2026-02-12T05:02:35.049Z","message":"Subdomain registered","name":"alice.test.divicompany.eth","parent":"test.divicompany.eth","label":"alice","addr":"0x8d674BaEcbA928C9d750f66b0b4A35b83cAFd595","texts":{"com.twitter":"@alice","description":"Alice's offchain subdomain"},"contenthash":null,"registeredAt":"2026-02-12T05:02:35.049Z"}
-{"timestamp":"2026-02-12T05:02:35.050Z","message":"Subdomain registered","name":"a.test2.divicompany.eth","parent":"test2.divicompany.eth","label":"a","addr":"0x8d674BaEcbA928C9d750f66b0b4A35b83cAFd595","texts":{"description":"First offchain subdomain under test2.divicompany.eth"},"contenthash":null,"registeredAt":"2026-02-12T05:02:35.050Z"}
+{"timestamp":"2026-02-13T13:45:23.499Z","message":"Gateway started","port":3001,"signer":"0x8d674BaEcbA928C9d750f66b0b4A35b83cAFd595"}
+{"timestamp":"2026-02-13T13:52:19.479Z","message":"CCIP-Read request","sender":"0x6dea337d5bdbce2db66196aba020bc02e6193b2d","callDataLen":456}
+{"timestamp":"2026-02-13T13:52:19.484Z","message":"Failed to decode resolve calldata","error":"invalid BytesLike value (argument=\"value\", value=\"9061b92300000000000000000000000000000000000000000000000000000000000000400000000000000000000000000000000000000000000000000000000000000080000000000000000000000000000000000000000000000000000000000000001d05616c6963650574657374330b64697669636f6d70616e79036574680000000000000000000000000000000000000000000000000000000000000000000000243b3b57de2934275bbfdec4254e975d40059df7a87f29a92ec6f2d5e3e0c17ab1837a056400000000000000000000000000000000000000000000000000000000\", code=INVALID_ARGUMENT, version=6.16.0)"}
+{"timestamp":"2026-02-13T13:57:55.254Z","message":"CCIP-Read request","sender":"0x6dea337d5bdbce2db66196aba020bc02e6193b2d","callDataLen":456}
+{"timestamp":"2026-02-13T13:57:55.260Z","message":"Failed to decode resolve calldata","error":"invalid BytesLike value (argument=\"value\", value=\"9061b92300000000000000000000000000000000000000000000000000000000000000400000000000000000000000000000000000000000000000000000000000000080000000000000000000000000000000000000000000000000000000000000001d0568656c6c6f0574657374330b64697669636f6d70616e79036574680000000000000000000000000000000000000000000000000000000000000000000000243b3b57de913005f5412665e0a07c4505c261be9ffd6e591c6f0e084b72a22a83f69b5e3b00000000000000000000000000000000000000000000000000000000\", code=INVALID_ARGUMENT, version=6.16.0)"}
+{"timestamp":"2026-02-17T09:58:52.991Z","message":"Gateway started","port":3001,"signer":"0x8d674BaEcbA928C9d750f66b0b4A35b83cAFd595"}
+{"timestamp":"2026-02-17T16:29:29.729Z","message":"CCIP-Read request","sender":"0x6Dea337D5BDBCe2DB66196AbA020bC02e6193b2d","callDataLen":650}
+{"timestamp":"2026-02-17T16:29:29.773Z","message":"Resolving","name":"test3.divicompany.eth","node":"0x6c798ec06cf38b9b1286f8d6c9e7545f2e0dc282082ad1f886cdb94b0bb202b9"}
+{"timestamp":"2026-02-17T16:29:29.774Z","message":"No text record","name":"test3.divicompany.eth","key":"com.twitter"}
+{"timestamp":"2026-02-17T16:29:29.793Z","message":"CCIP-Read request","sender":"0x6Dea337D5BDBCe2DB66196AbA020bC02e6193b2d","callDataLen":650}
+{"timestamp":"2026-02-17T16:29:29.794Z","message":"Resolving","name":"test3.divicompany.eth","node":"0x6c798ec06cf38b9b1286f8d6c9e7545f2e0dc282082ad1f886cdb94b0bb202b9"}
+{"timestamp":"2026-02-17T16:29:29.794Z","message":"No text record","name":"test3.divicompany.eth","key":"com.github"}
+{"timestamp":"2026-02-17T16:29:29.795Z","message":"CCIP-Read request","sender":"0x6Dea337D5BDBCe2DB66196AbA020bC02e6193b2d","callDataLen":650}
+{"timestamp":"2026-02-17T16:29:29.796Z","message":"Resolving","name":"test3.divicompany.eth","node":"0x6c798ec06cf38b9b1286f8d6c9e7545f2e0dc282082ad1f886cdb94b0bb202b9"}
+{"timestamp":"2026-02-17T16:29:29.797Z","message":"No text record","name":"test3.divicompany.eth","key":"description"}
+{"timestamp":"2026-02-17T16:29:29.798Z","message":"CCIP-Read request","sender":"0x6Dea337D5BDBCe2DB66196AbA020bC02e6193b2d","callDataLen":650}
+{"timestamp":"2026-02-17T16:29:29.799Z","message":"Resolving","name":"test3.divicompany.eth","node":"0x6c798ec06cf38b9b1286f8d6c9e7545f2e0dc282082ad1f886cdb94b0bb202b9"}
+{"timestamp":"2026-02-17T16:29:29.799Z","message":"No text record","name":"test3.divicompany.eth","key":"com.discord"}
+{"timestamp":"2026-02-17T16:29:29.800Z","message":"CCIP-Read request","sender":"0x6Dea337D5BDBCe2DB66196AbA020bC02e6193b2d","callDataLen":650}
+{"timestamp":"2026-02-17T16:29:29.804Z","message":"Resolving","name":"test3.divicompany.eth","node":"0x6c798ec06cf38b9b1286f8d6c9e7545f2e0dc282082ad1f886cdb94b0bb202b9"}
+{"timestamp":"2026-02-17T16:29:29.804Z","message":"No text record","name":"test3.divicompany.eth","key":"location"}
+{"timestamp":"2026-02-17T16:29:29.805Z","message":"CCIP-Read request","sender":"0x6Dea337D5BDBCe2DB66196AbA020bC02e6193b2d","callDataLen":650}
+{"timestamp":"2026-02-17T16:29:29.806Z","message":"Resolving","name":"test3.divicompany.eth","node":"0x6c798ec06cf38b9b1286f8d6c9e7545f2e0dc282082ad1f886cdb94b0bb202b9"}
+{"timestamp":"2026-02-17T16:29:29.806Z","message":"No text record","name":"test3.divicompany.eth","key":"url"}
+{"timestamp":"2026-02-17T16:29:29.808Z","message":"CCIP-Read request","sender":"0x6Dea337D5BDBCe2DB66196AbA020bC02e6193b2d","callDataLen":650}
+{"timestamp":"2026-02-17T16:29:29.809Z","message":"Resolving","name":"test3.divicompany.eth","node":"0x6c798ec06cf38b9b1286f8d6c9e7545f2e0dc282082ad1f886cdb94b0bb202b9"}
+{"timestamp":"2026-02-17T16:29:29.810Z","message":"No text record","name":"test3.divicompany.eth","key":"org.telegram"}
+{"timestamp":"2026-02-17T16:29:29.812Z","message":"CCIP-Read request","sender":"0x6Dea337D5BDBCe2DB66196AbA020bC02e6193b2d","callDataLen":522}
+{"timestamp":"2026-02-17T16:29:29.816Z","message":"Resolving","name":"test3.divicompany.eth","node":"0x6c798ec06cf38b9b1286f8d6c9e7545f2e0dc282082ad1f886cdb94b0bb202b9"}
+{"timestamp":"2026-02-17T16:29:29.822Z","message":"No addr for coinType","name":"test3.divicompany.eth","coinType":2147483648}
+{"timestamp":"2026-02-17T16:29:29.829Z","message":"CCIP-Read request","sender":"0x6Dea337D5BDBCe2DB66196AbA020bC02e6193b2d","callDataLen":458}
+{"timestamp":"2026-02-17T16:29:29.830Z","message":"Resolving","name":"test3.divicompany.eth","node":"0x6c798ec06cf38b9b1286f8d6c9e7545f2e0dc282082ad1f886cdb94b0bb202b9"}
+{"timestamp":"2026-02-17T16:29:29.831Z","message":"No addr record","name":"test3.divicompany.eth"}
+{"timestamp":"2026-02-17T16:29:29.834Z","message":"CCIP-Read request","sender":"0x6Dea337D5BDBCe2DB66196AbA020bC02e6193b2d","callDataLen":650}
+{"timestamp":"2026-02-17T16:29:29.835Z","message":"Resolving","name":"test3.divicompany.eth","node":"0x6c798ec06cf38b9b1286f8d6c9e7545f2e0dc282082ad1f886cdb94b0bb202b9"}
+{"timestamp":"2026-02-17T16:29:29.835Z","message":"No text record","name":"test3.divicompany.eth","key":"avatar"}
+{"timestamp":"2026-02-17T16:29:29.838Z","message":"CCIP-Read request","sender":"0x6Dea337D5BDBCe2DB66196AbA020bC02e6193b2d","callDataLen":650}
+{"timestamp":"2026-02-17T16:29:29.839Z","message":"Resolving","name":"test3.divicompany.eth","node":"0x6c798ec06cf38b9b1286f8d6c9e7545f2e0dc282082ad1f886cdb94b0bb202b9"}
+{"timestamp":"2026-02-17T16:29:29.839Z","message":"No text record","name":"test3.divicompany.eth","key":"email"}
+{"timestamp":"2026-02-17T16:29:29.843Z","message":"CCIP-Read request","sender":"0x6Dea337D5BDBCe2DB66196AbA020bC02e6193b2d","callDataLen":522}
+{"timestamp":"2026-02-17T16:29:29.848Z","message":"Resolving","name":"test3.divicompany.eth","node":"0x6c798ec06cf38b9b1286f8d6c9e7545f2e0dc282082ad1f886cdb94b0bb202b9"}
+{"timestamp":"2026-02-17T16:29:29.849Z","message":"No addr for coinType","name":"test3.divicompany.eth","coinType":501}
+{"timestamp":"2026-02-17T16:29:29.864Z","message":"CCIP-Read request","sender":"0x6Dea337D5BDBCe2DB66196AbA020bC02e6193b2d","callDataLen":522}
+{"timestamp":"2026-02-17T16:29:29.866Z","message":"Resolving","name":"test3.divicompany.eth","node":"0x6c798ec06cf38b9b1286f8d6c9e7545f2e0dc282082ad1f886cdb94b0bb202b9"}
+{"timestamp":"2026-02-17T16:29:29.867Z","message":"No addr for coinType","name":"test3.divicompany.eth","coinType":2147483658}
+{"timestamp":"2026-02-17T16:29:29.870Z","message":"CCIP-Read request","sender":"0x6Dea337D5BDBCe2DB66196AbA020bC02e6193b2d","callDataLen":522}
+{"timestamp":"2026-02-17T16:29:29.870Z","message":"Resolving","name":"test3.divicompany.eth","node":"0x6c798ec06cf38b9b1286f8d6c9e7545f2e0dc282082ad1f886cdb94b0bb202b9"}
+{"timestamp":"2026-02-17T16:29:29.871Z","message":"No addr for coinType","name":"test3.divicompany.eth","coinType":2147525809}
+{"timestamp":"2026-02-17T16:29:29.872Z","message":"CCIP-Read request","sender":"0x6Dea337D5BDBCe2DB66196AbA020bC02e6193b2d","callDataLen":522}
+{"timestamp":"2026-02-17T16:29:29.873Z","message":"Resolving","name":"test3.divicompany.eth","node":"0x6c798ec06cf38b9b1286f8d6c9e7545f2e0dc282082ad1f886cdb94b0bb202b9"}
+{"timestamp":"2026-02-17T16:29:29.873Z","message":"No addr for coinType","name":"test3.divicompany.eth","coinType":0}
+{"timestamp":"2026-02-17T16:29:29.874Z","message":"CCIP-Read request","sender":"0x6Dea337D5BDBCe2DB66196AbA020bC02e6193b2d","callDataLen":650}
+{"timestamp":"2026-02-17T16:29:29.875Z","message":"Resolving","name":"test3.divicompany.eth","node":"0x6c798ec06cf38b9b1286f8d6c9e7545f2e0dc282082ad1f886cdb94b0bb202b9"}
+{"timestamp":"2026-02-17T16:29:29.875Z","message":"No text record","name":"test3.divicompany.eth","key":"name"}
+{"timestamp":"2026-02-17T16:29:29.877Z","message":"CCIP-Read request","sender":"0x6Dea337D5BDBCe2DB66196AbA020bC02e6193b2d","callDataLen":522}
+{"timestamp":"2026-02-17T16:29:29.877Z","message":"Resolving","name":"test3.divicompany.eth","node":"0x6c798ec06cf38b9b1286f8d6c9e7545f2e0dc282082ad1f886cdb94b0bb202b9"}
+{"timestamp":"2026-02-17T16:29:29.878Z","message":"No addr for coinType","name":"test3.divicompany.eth","coinType":2147483785}
+{"timestamp":"2026-02-17T16:29:29.879Z","message":"CCIP-Read request","sender":"0x6Dea337D5BDBCe2DB66196AbA020bC02e6193b2d","callDataLen":522}
+{"timestamp":"2026-02-17T16:29:29.879Z","message":"Resolving","name":"test3.divicompany.eth","node":"0x6c798ec06cf38b9b1286f8d6c9e7545f2e0dc282082ad1f886cdb94b0bb202b9"}
+{"timestamp":"2026-02-17T16:29:29.879Z","message":"No addr for coinType","name":"test3.divicompany.eth","coinType":2147542792}
+{"timestamp":"2026-02-17T16:29:29.880Z","message":"CCIP-Read request","sender":"0x6Dea337D5BDBCe2DB66196AbA020bC02e6193b2d","callDataLen":522}
+{"timestamp":"2026-02-17T16:29:29.881Z","message":"Resolving","name":"test3.divicompany.eth","node":"0x6c798ec06cf38b9b1286f8d6c9e7545f2e0dc282082ad1f886cdb94b0bb202b9"}
+{"timestamp":"2026-02-17T16:29:29.881Z","message":"No addr for coinType","name":"test3.divicompany.eth","coinType":2148018000}
+{"timestamp":"2026-02-17T16:29:29.882Z","message":"CCIP-Read request","sender":"0x6Dea337D5BDBCe2DB66196AbA020bC02e6193b2d","callDataLen":522}
+{"timestamp":"2026-02-17T16:29:29.882Z","message":"Resolving","name":"test3.divicompany.eth","node":"0x6c798ec06cf38b9b1286f8d6c9e7545f2e0dc282082ad1f886cdb94b0bb202b9"}
+{"timestamp":"2026-02-17T16:29:29.883Z","message":"No addr for coinType","name":"test3.divicompany.eth","coinType":2147525868}
+{"timestamp":"2026-02-17T16:29:29.883Z","message":"CCIP-Read request","sender":"0x6Dea337D5BDBCe2DB66196AbA020bC02e6193b2d","callDataLen":522}
+{"timestamp":"2026-02-17T16:29:29.884Z","message":"Resolving","name":"test3.divicompany.eth","node":"0x6c798ec06cf38b9b1286f8d6c9e7545f2e0dc282082ad1f886cdb94b0bb202b9"}
+{"timestamp":"2026-02-17T16:29:29.884Z","message":"No addr for coinType","name":"test3.divicompany.eth","coinType":2147492101}
+{"timestamp":"2026-02-17T16:29:29.885Z","message":"CCIP-Read request","sender":"0x6Dea337D5BDBCe2DB66196AbA020bC02e6193b2d","callDataLen":522}
+{"timestamp":"2026-02-17T16:29:29.886Z","message":"Resolving","name":"test3.divicompany.eth","node":"0x6c798ec06cf38b9b1286f8d6c9e7545f2e0dc282082ad1f886cdb94b0bb202b9"}
+{"timestamp":"2026-02-17T16:29:29.886Z","message":"Unknown selector","selector":"0x2203ab56"}
+{"timestamp":"2026-02-17T16:29:29.887Z","message":"CCIP-Read request","sender":"0x6Dea337D5BDBCe2DB66196AbA020bC02e6193b2d","callDataLen":458}
+{"timestamp":"2026-02-17T16:29:29.888Z","message":"Resolving","name":"test2.divicompany.eth","node":"0x9cebf732803f7b7a3b80e9c9e310f6f9954e1d9001d57fec3591ee81c8ad6cb1"}
+{"timestamp":"2026-02-17T16:29:29.888Z","message":"No addr record","name":"test2.divicompany.eth"}
+{"timestamp":"2026-02-17T16:29:29.888Z","message":"CCIP-Read request","sender":"0x6Dea337D5BDBCe2DB66196AbA020bC02e6193b2d","callDataLen":650}
+{"timestamp":"2026-02-17T16:29:29.889Z","message":"Resolving","name":"test2.divicompany.eth","node":"0x9cebf732803f7b7a3b80e9c9e310f6f9954e1d9001d57fec3591ee81c8ad6cb1"}
+{"timestamp":"2026-02-17T16:29:29.889Z","message":"No text record","name":"test2.divicompany.eth","key":"com.twitter"}
+{"timestamp":"2026-02-17T16:29:29.890Z","message":"CCIP-Read request","sender":"0x6Dea337D5BDBCe2DB66196AbA020bC02e6193b2d","callDataLen":650}
+{"timestamp":"2026-02-17T16:29:29.891Z","message":"Resolving","name":"test2.divicompany.eth","node":"0x9cebf732803f7b7a3b80e9c9e310f6f9954e1d9001d57fec3591ee81c8ad6cb1"}
+{"timestamp":"2026-02-17T16:29:29.891Z","message":"No text record","name":"test2.divicompany.eth","key":"com.github"}
+{"timestamp":"2026-02-17T16:29:29.892Z","message":"CCIP-Read request","sender":"0x6Dea337D5BDBCe2DB66196AbA020bC02e6193b2d","callDataLen":458}
+{"timestamp":"2026-02-17T16:29:29.894Z","message":"Resolving","name":"test3.divicompany.eth","node":"0x6c798ec06cf38b9b1286f8d6c9e7545f2e0dc282082ad1f886cdb94b0bb202b9"}
+{"timestamp":"2026-02-17T16:29:29.894Z","message":"No contenthash record","name":"test3.divicompany.eth"}
+{"timestamp":"2026-02-17T16:29:29.895Z","message":"CCIP-Read request","sender":"0x6Dea337D5BDBCe2DB66196AbA020bC02e6193b2d","callDataLen":650}
+{"timestamp":"2026-02-17T16:29:29.895Z","message":"Resolving","name":"test2.divicompany.eth","node":"0x9cebf732803f7b7a3b80e9c9e310f6f9954e1d9001d57fec3591ee81c8ad6cb1"}
+{"timestamp":"2026-02-17T16:29:29.896Z","message":"No text record","name":"test2.divicompany.eth","key":"org.telegram"}
+{"timestamp":"2026-02-17T16:29:29.896Z","message":"CCIP-Read request","sender":"0x6Dea337D5BDBCe2DB66196AbA020bC02e6193b2d","callDataLen":650}
+{"timestamp":"2026-02-17T16:29:29.897Z","message":"Resolving","name":"test2.divicompany.eth","node":"0x9cebf732803f7b7a3b80e9c9e310f6f9954e1d9001d57fec3591ee81c8ad6cb1"}
+{"timestamp":"2026-02-17T16:29:29.898Z","message":"No text record","name":"test2.divicompany.eth","key":"email"}
+{"timestamp":"2026-02-17T16:29:29.899Z","message":"CCIP-Read request","sender":"0x6Dea337D5BDBCe2DB66196AbA020bC02e6193b2d","callDataLen":650}
+{"timestamp":"2026-02-17T16:29:29.899Z","message":"Resolving","name":"test2.divicompany.eth","node":"0x9cebf732803f7b7a3b80e9c9e310f6f9954e1d9001d57fec3591ee81c8ad6cb1"}
+{"timestamp":"2026-02-17T16:29:29.900Z","message":"No text record","name":"test2.divicompany.eth","key":"name"}
+{"timestamp":"2026-02-17T16:29:29.900Z","message":"CCIP-Read request","sender":"0x6Dea337D5BDBCe2DB66196AbA020bC02e6193b2d","callDataLen":650}
+{"timestamp":"2026-02-17T16:29:29.901Z","message":"Resolving","name":"test2.divicompany.eth","node":"0x9cebf732803f7b7a3b80e9c9e310f6f9954e1d9001d57fec3591ee81c8ad6cb1"}
+{"timestamp":"2026-02-17T16:29:29.901Z","message":"No text record","name":"test2.divicompany.eth","key":"description"}
+{"timestamp":"2026-02-17T16:29:29.902Z","message":"CCIP-Read request","sender":"0x6Dea337D5BDBCe2DB66196AbA020bC02e6193b2d","callDataLen":650}
+{"timestamp":"2026-02-17T16:29:29.902Z","message":"Resolving","name":"test2.divicompany.eth","node":"0x9cebf732803f7b7a3b80e9c9e310f6f9954e1d9001d57fec3591ee81c8ad6cb1"}
+{"timestamp":"2026-02-17T16:29:29.903Z","message":"No text record","name":"test2.divicompany.eth","key":"com.discord"}
+{"timestamp":"2026-02-17T16:29:29.903Z","message":"CCIP-Read request","sender":"0x6Dea337D5BDBCe2DB66196AbA020bC02e6193b2d","callDataLen":650}
+{"timestamp":"2026-02-17T16:29:29.904Z","message":"Resolving","name":"test2.divicompany.eth","node":"0x9cebf732803f7b7a3b80e9c9e310f6f9954e1d9001d57fec3591ee81c8ad6cb1"}
+{"timestamp":"2026-02-17T16:29:29.904Z","message":"No text record","name":"test2.divicompany.eth","key":"location"}
+{"timestamp":"2026-02-17T16:29:29.905Z","message":"CCIP-Read request","sender":"0x6Dea337D5BDBCe2DB66196AbA020bC02e6193b2d","callDataLen":650}
+{"timestamp":"2026-02-17T16:29:29.906Z","message":"Resolving","name":"test2.divicompany.eth","node":"0x9cebf732803f7b7a3b80e9c9e310f6f9954e1d9001d57fec3591ee81c8ad6cb1"}
+{"timestamp":"2026-02-17T16:29:29.906Z","message":"No text record","name":"test2.divicompany.eth","key":"avatar"}
+{"timestamp":"2026-02-17T16:29:29.907Z","message":"CCIP-Read request","sender":"0x6Dea337D5BDBCe2DB66196AbA020bC02e6193b2d","callDataLen":522}
+{"timestamp":"2026-02-17T16:29:29.907Z","message":"Resolving","name":"test2.divicompany.eth","node":"0x9cebf732803f7b7a3b80e9c9e310f6f9954e1d9001d57fec3591ee81c8ad6cb1"}
+{"timestamp":"2026-02-17T16:29:29.907Z","message":"No addr for coinType","name":"test2.divicompany.eth","coinType":2147483648}
+{"timestamp":"2026-02-17T16:29:29.911Z","message":"CCIP-Read request","sender":"0x6Dea337D5BDBCe2DB66196AbA020bC02e6193b2d","callDataLen":522}
+{"timestamp":"2026-02-17T16:29:29.912Z","message":"Resolving","name":"test2.divicompany.eth","node":"0x9cebf732803f7b7a3b80e9c9e310f6f9954e1d9001d57fec3591ee81c8ad6cb1"}
+{"timestamp":"2026-02-17T16:29:29.912Z","message":"No addr for coinType","name":"test2.divicompany.eth","coinType":0}
+{"timestamp":"2026-02-17T16:29:29.913Z","message":"CCIP-Read request","sender":"0x6Dea337D5BDBCe2DB66196AbA020bC02e6193b2d","callDataLen":650}
+{"timestamp":"2026-02-17T16:29:29.914Z","message":"Resolving","name":"test2.divicompany.eth","node":"0x9cebf732803f7b7a3b80e9c9e310f6f9954e1d9001d57fec3591ee81c8ad6cb1"}
+{"timestamp":"2026-02-17T16:29:29.914Z","message":"No text record","name":"test2.divicompany.eth","key":"url"}
+{"timestamp":"2026-02-17T16:29:29.915Z","message":"CCIP-Read request","sender":"0x6Dea337D5BDBCe2DB66196AbA020bC02e6193b2d","callDataLen":522}
+{"timestamp":"2026-02-17T16:29:29.916Z","message":"Resolving","name":"test2.divicompany.eth","node":"0x9cebf732803f7b7a3b80e9c9e310f6f9954e1d9001d57fec3591ee81c8ad6cb1"}
+{"timestamp":"2026-02-17T16:29:29.916Z","message":"No addr for coinType","name":"test2.divicompany.eth","coinType":2147483658}
+{"timestamp":"2026-02-17T16:29:29.917Z","message":"CCIP-Read request","sender":"0x6Dea337D5BDBCe2DB66196AbA020bC02e6193b2d","callDataLen":522}
+{"timestamp":"2026-02-17T16:29:29.917Z","message":"Resolving","name":"test2.divicompany.eth","node":"0x9cebf732803f7b7a3b80e9c9e310f6f9954e1d9001d57fec3591ee81c8ad6cb1"}
+{"timestamp":"2026-02-17T16:29:29.917Z","message":"No addr for coinType","name":"test2.divicompany.eth","coinType":2147525809}
+{"timestamp":"2026-02-17T16:29:29.918Z","message":"CCIP-Read request","sender":"0x6Dea337D5BDBCe2DB66196AbA020bC02e6193b2d","callDataLen":522}
+{"timestamp":"2026-02-17T16:29:29.918Z","message":"Resolving","name":"test2.divicompany.eth","node":"0x9cebf732803f7b7a3b80e9c9e310f6f9954e1d9001d57fec3591ee81c8ad6cb1"}
+{"timestamp":"2026-02-17T16:29:29.918Z","message":"No addr for coinType","name":"test2.divicompany.eth","coinType":2147492101}
+{"timestamp":"2026-02-17T16:29:29.919Z","message":"CCIP-Read request","sender":"0x6Dea337D5BDBCe2DB66196AbA020bC02e6193b2d","callDataLen":522}
+{"timestamp":"2026-02-17T16:29:29.919Z","message":"Resolving","name":"test2.divicompany.eth","node":"0x9cebf732803f7b7a3b80e9c9e310f6f9954e1d9001d57fec3591ee81c8ad6cb1"}
+{"timestamp":"2026-02-17T16:29:29.919Z","message":"No addr for coinType","name":"test2.divicompany.eth","coinType":2147483785}
+{"timestamp":"2026-02-17T16:29:29.920Z","message":"CCIP-Read request","sender":"0x6Dea337D5BDBCe2DB66196AbA020bC02e6193b2d","callDataLen":522}
+{"timestamp":"2026-02-17T16:29:29.920Z","message":"Resolving","name":"test2.divicompany.eth","node":"0x9cebf732803f7b7a3b80e9c9e310f6f9954e1d9001d57fec3591ee81c8ad6cb1"}
+{"timestamp":"2026-02-17T16:29:29.920Z","message":"No addr for coinType","name":"test2.divicompany.eth","coinType":501}
+{"timestamp":"2026-02-17T16:29:29.922Z","message":"CCIP-Read request","sender":"0x6Dea337D5BDBCe2DB66196AbA020bC02e6193b2d","callDataLen":522}
+{"timestamp":"2026-02-17T16:29:29.923Z","message":"Resolving","name":"test2.divicompany.eth","node":"0x9cebf732803f7b7a3b80e9c9e310f6f9954e1d9001d57fec3591ee81c8ad6cb1"}
+{"timestamp":"2026-02-17T16:29:29.923Z","message":"No addr for coinType","name":"test2.divicompany.eth","coinType":2148018000}
+{"timestamp":"2026-02-17T16:29:29.923Z","message":"CCIP-Read request","sender":"0x6Dea337D5BDBCe2DB66196AbA020bC02e6193b2d","callDataLen":522}
+{"timestamp":"2026-02-17T16:29:29.924Z","message":"Resolving","name":"test2.divicompany.eth","node":"0x9cebf732803f7b7a3b80e9c9e310f6f9954e1d9001d57fec3591ee81c8ad6cb1"}
+{"timestamp":"2026-02-17T16:29:29.924Z","message":"No addr for coinType","name":"test2.divicompany.eth","coinType":2147525868}
+{"timestamp":"2026-02-17T16:29:29.925Z","message":"CCIP-Read request","sender":"0x6Dea337D5BDBCe2DB66196AbA020bC02e6193b2d","callDataLen":458}
+{"timestamp":"2026-02-17T16:29:29.925Z","message":"Resolving","name":"test2.divicompany.eth","node":"0x9cebf732803f7b7a3b80e9c9e310f6f9954e1d9001d57fec3591ee81c8ad6cb1"}
+{"timestamp":"2026-02-17T16:29:29.926Z","message":"No contenthash record","name":"test2.divicompany.eth"}
+{"timestamp":"2026-02-17T16:29:29.927Z","message":"CCIP-Read request","sender":"0x6Dea337D5BDBCe2DB66196AbA020bC02e6193b2d","callDataLen":522}
+{"timestamp":"2026-02-17T16:29:29.928Z","message":"Resolving","name":"test2.divicompany.eth","node":"0x9cebf732803f7b7a3b80e9c9e310f6f9954e1d9001d57fec3591ee81c8ad6cb1"}
+{"timestamp":"2026-02-17T16:29:29.928Z","message":"Unknown selector","selector":"0x2203ab56"}
+{"timestamp":"2026-02-17T16:29:29.929Z","message":"CCIP-Read request","sender":"0x6Dea337D5BDBCe2DB66196AbA020bC02e6193b2d","callDataLen":522}
+{"timestamp":"2026-02-17T16:29:29.929Z","message":"Resolving","name":"test2.divicompany.eth","node":"0x9cebf732803f7b7a3b80e9c9e310f6f9954e1d9001d57fec3591ee81c8ad6cb1"}
+{"timestamp":"2026-02-17T16:29:29.929Z","message":"No addr for coinType","name":"test2.divicompany.eth","coinType":2147542792}
+{"timestamp":"2026-02-17T16:29:29.931Z","message":"CCIP-Read request","sender":"0x6Dea337D5BDBCe2DB66196AbA020bC02e6193b2d","callDataLen":458}
+{"timestamp":"2026-02-17T16:29:29.931Z","message":"Resolving","name":"test2.divicompany.eth","node":"0x9cebf732803f7b7a3b80e9c9e310f6f9954e1d9001d57fec3591ee81c8ad6cb1"}
+{"timestamp":"2026-02-17T16:29:29.931Z","message":"No addr record","name":"test2.divicompany.eth"}
+{"timestamp":"2026-02-17T16:29:29.932Z","message":"CCIP-Read request","sender":"0x6Dea337D5BDBCe2DB66196AbA020bC02e6193b2d","callDataLen":458}
+{"timestamp":"2026-02-17T16:29:29.933Z","message":"Resolving","name":"test3.divicompany.eth","node":"0x6c798ec06cf38b9b1286f8d6c9e7545f2e0dc282082ad1f886cdb94b0bb202b9"}
+{"timestamp":"2026-02-17T16:29:29.933Z","message":"No addr record","name":"test3.divicompany.eth"}
+{"timestamp":"2026-02-17T16:29:34.944Z","message":"CCIP-Read request","sender":"0x6Dea337D5BDBCe2DB66196AbA020bC02e6193b2d","callDataLen":650}
+{"timestamp":"2026-02-17T16:29:34.945Z","message":"Resolving","name":"test.divicompany.eth","node":"0x100c605da9c627fef49b114d682ff596b16f3e47df8401864fe81997e415b861"}
+{"timestamp":"2026-02-17T16:29:34.945Z","message":"No text record","name":"test.divicompany.eth","key":"com.twitter"}
+{"timestamp":"2026-02-17T16:29:34.948Z","message":"CCIP-Read request","sender":"0x6Dea337D5BDBCe2DB66196AbA020bC02e6193b2d","callDataLen":650}
+{"timestamp":"2026-02-17T16:29:34.949Z","message":"Resolving","name":"test.divicompany.eth","node":"0x100c605da9c627fef49b114d682ff596b16f3e47df8401864fe81997e415b861"}
+{"timestamp":"2026-02-17T16:29:34.950Z","message":"No text record","name":"test.divicompany.eth","key":"com.github"}
+{"timestamp":"2026-02-17T16:29:34.954Z","message":"CCIP-Read request","sender":"0x6Dea337D5BDBCe2DB66196AbA020bC02e6193b2d","callDataLen":650}
+{"timestamp":"2026-02-17T16:29:34.955Z","message":"Resolving","name":"test.divicompany.eth","node":"0x100c605da9c627fef49b114d682ff596b16f3e47df8401864fe81997e415b861"}
+{"timestamp":"2026-02-17T16:29:34.955Z","message":"No text record","name":"test.divicompany.eth","key":"com.discord"}
+{"timestamp":"2026-02-17T16:29:34.958Z","message":"CCIP-Read request","sender":"0x6Dea337D5BDBCe2DB66196AbA020bC02e6193b2d","callDataLen":650}
+{"timestamp":"2026-02-17T16:29:34.959Z","message":"Resolving","name":"test.divicompany.eth","node":"0x100c605da9c627fef49b114d682ff596b16f3e47df8401864fe81997e415b861"}
+{"timestamp":"2026-02-17T16:29:34.959Z","message":"No text record","name":"test.divicompany.eth","key":"org.telegram"}
+{"timestamp":"2026-02-17T16:29:34.960Z","message":"CCIP-Read request","sender":"0x6Dea337D5BDBCe2DB66196AbA020bC02e6193b2d","callDataLen":650}
+{"timestamp":"2026-02-17T16:29:34.961Z","message":"Resolving","name":"test.divicompany.eth","node":"0x100c605da9c627fef49b114d682ff596b16f3e47df8401864fe81997e415b861"}
+{"timestamp":"2026-02-17T16:29:34.961Z","message":"No text record","name":"test.divicompany.eth","key":"email"}
+{"timestamp":"2026-02-17T16:29:34.962Z","message":"CCIP-Read request","sender":"0x6Dea337D5BDBCe2DB66196AbA020bC02e6193b2d","callDataLen":650}
+{"timestamp":"2026-02-17T16:29:34.963Z","message":"Resolving","name":"test.divicompany.eth","node":"0x100c605da9c627fef49b114d682ff596b16f3e47df8401864fe81997e415b861"}
+{"timestamp":"2026-02-17T16:29:34.963Z","message":"No text record","name":"test.divicompany.eth","key":"name"}
+{"timestamp":"2026-02-17T16:29:34.964Z","message":"CCIP-Read request","sender":"0x6Dea337D5BDBCe2DB66196AbA020bC02e6193b2d","callDataLen":650}
+{"timestamp":"2026-02-17T16:29:34.965Z","message":"Resolving","name":"test.divicompany.eth","node":"0x100c605da9c627fef49b114d682ff596b16f3e47df8401864fe81997e415b861"}
+{"timestamp":"2026-02-17T16:29:34.965Z","message":"No text record","name":"test.divicompany.eth","key":"url"}
+{"timestamp":"2026-02-17T16:29:34.966Z","message":"CCIP-Read request","sender":"0x6Dea337D5BDBCe2DB66196AbA020bC02e6193b2d","callDataLen":650}
+{"timestamp":"2026-02-17T16:29:34.967Z","message":"Resolving","name":"test.divicompany.eth","node":"0x100c605da9c627fef49b114d682ff596b16f3e47df8401864fe81997e415b861"}
+{"timestamp":"2026-02-17T16:29:34.967Z","message":"No text record","name":"test.divicompany.eth","key":"location"}
+{"timestamp":"2026-02-17T16:29:34.968Z","message":"CCIP-Read request","sender":"0x6Dea337D5BDBCe2DB66196AbA020bC02e6193b2d","callDataLen":650}
+{"timestamp":"2026-02-17T16:29:34.968Z","message":"Resolving","name":"test.divicompany.eth","node":"0x100c605da9c627fef49b114d682ff596b16f3e47df8401864fe81997e415b861"}
+{"timestamp":"2026-02-17T16:29:34.968Z","message":"No text record","name":"test.divicompany.eth","key":"avatar"}
+{"timestamp":"2026-02-17T16:29:34.969Z","message":"CCIP-Read request","sender":"0x6Dea337D5BDBCe2DB66196AbA020bC02e6193b2d","callDataLen":522}
+{"timestamp":"2026-02-17T16:29:34.970Z","message":"Resolving","name":"test.divicompany.eth","node":"0x100c605da9c627fef49b114d682ff596b16f3e47df8401864fe81997e415b861"}
+{"timestamp":"2026-02-17T16:29:34.971Z","message":"No addr for coinType","name":"test.divicompany.eth","coinType":2147483648}
+{"timestamp":"2026-02-17T16:29:34.972Z","message":"CCIP-Read request","sender":"0x6Dea337D5BDBCe2DB66196AbA020bC02e6193b2d","callDataLen":650}
+{"timestamp":"2026-02-17T16:29:34.973Z","message":"Resolving","name":"test.divicompany.eth","node":"0x100c605da9c627fef49b114d682ff596b16f3e47df8401864fe81997e415b861"}
+{"timestamp":"2026-02-17T16:29:34.973Z","message":"No text record","name":"test.divicompany.eth","key":"description"}
+{"timestamp":"2026-02-17T16:29:34.975Z","message":"CCIP-Read request","sender":"0x6Dea337D5BDBCe2DB66196AbA020bC02e6193b2d","callDataLen":522}
+{"timestamp":"2026-02-17T16:29:34.977Z","message":"Resolving","name":"test.divicompany.eth","node":"0x100c605da9c627fef49b114d682ff596b16f3e47df8401864fe81997e415b861"}
+{"timestamp":"2026-02-17T16:29:34.977Z","message":"No addr for coinType","name":"test.divicompany.eth","coinType":0}
+{"timestamp":"2026-02-17T16:29:34.978Z","message":"CCIP-Read request","sender":"0x6Dea337D5BDBCe2DB66196AbA020bC02e6193b2d","callDataLen":522}
+{"timestamp":"2026-02-17T16:29:34.980Z","message":"Resolving","name":"test.divicompany.eth","node":"0x100c605da9c627fef49b114d682ff596b16f3e47df8401864fe81997e415b861"}
+{"timestamp":"2026-02-17T16:29:34.980Z","message":"No addr for coinType","name":"test.divicompany.eth","coinType":501}
+{"timestamp":"2026-02-17T16:29:34.981Z","message":"CCIP-Read request","sender":"0x6Dea337D5BDBCe2DB66196AbA020bC02e6193b2d","callDataLen":522}
+{"timestamp":"2026-02-17T16:29:34.982Z","message":"Resolving","name":"test.divicompany.eth","node":"0x100c605da9c627fef49b114d682ff596b16f3e47df8401864fe81997e415b861"}
+{"timestamp":"2026-02-17T16:29:34.983Z","message":"No addr for coinType","name":"test.divicompany.eth","coinType":2147483658}
+{"timestamp":"2026-02-17T16:29:34.984Z","message":"CCIP-Read request","sender":"0x6Dea337D5BDBCe2DB66196AbA020bC02e6193b2d","callDataLen":522}
+{"timestamp":"2026-02-17T16:29:34.985Z","message":"Resolving","name":"test.divicompany.eth","node":"0x100c605da9c627fef49b114d682ff596b16f3e47df8401864fe81997e415b861"}
+{"timestamp":"2026-02-17T16:29:34.985Z","message":"No addr for coinType","name":"test.divicompany.eth","coinType":2147525809}
+{"timestamp":"2026-02-17T16:29:34.986Z","message":"CCIP-Read request","sender":"0x6Dea337D5BDBCe2DB66196AbA020bC02e6193b2d","callDataLen":458}
+{"timestamp":"2026-02-17T16:29:34.987Z","message":"Resolving","name":"test.divicompany.eth","node":"0x100c605da9c627fef49b114d682ff596b16f3e47df8401864fe81997e415b861"}
+{"timestamp":"2026-02-17T16:29:34.988Z","message":"No addr record","name":"test.divicompany.eth"}
+{"timestamp":"2026-02-17T16:29:34.989Z","message":"CCIP-Read request","sender":"0x6Dea337D5BDBCe2DB66196AbA020bC02e6193b2d","callDataLen":522}
+{"timestamp":"2026-02-17T16:29:34.990Z","message":"Resolving","name":"test.divicompany.eth","node":"0x100c605da9c627fef49b114d682ff596b16f3e47df8401864fe81997e415b861"}
+{"timestamp":"2026-02-17T16:29:34.990Z","message":"No addr for coinType","name":"test.divicompany.eth","coinType":2147483785}
+{"timestamp":"2026-02-17T16:29:34.991Z","message":"CCIP-Read request","sender":"0x6Dea337D5BDBCe2DB66196AbA020bC02e6193b2d","callDataLen":522}
+{"timestamp":"2026-02-17T16:29:34.992Z","message":"Resolving","name":"test.divicompany.eth","node":"0x100c605da9c627fef49b114d682ff596b16f3e47df8401864fe81997e415b861"}
+{"timestamp":"2026-02-17T16:29:34.992Z","message":"No addr for coinType","name":"test.divicompany.eth","coinType":2147542792}
+{"timestamp":"2026-02-17T16:29:34.993Z","message":"CCIP-Read request","sender":"0x6Dea337D5BDBCe2DB66196AbA020bC02e6193b2d","callDataLen":522}
+{"timestamp":"2026-02-17T16:29:34.994Z","message":"Resolving","name":"test.divicompany.eth","node":"0x100c605da9c627fef49b114d682ff596b16f3e47df8401864fe81997e415b861"}
+{"timestamp":"2026-02-17T16:29:34.994Z","message":"No addr for coinType","name":"test.divicompany.eth","coinType":2148018000}
+{"timestamp":"2026-02-17T16:29:34.995Z","message":"CCIP-Read request","sender":"0x6Dea337D5BDBCe2DB66196AbA020bC02e6193b2d","callDataLen":522}
+{"timestamp":"2026-02-17T16:29:34.996Z","message":"Resolving","name":"test.divicompany.eth","node":"0x100c605da9c627fef49b114d682ff596b16f3e47df8401864fe81997e415b861"}
+{"timestamp":"2026-02-17T16:29:34.996Z","message":"No addr for coinType","name":"test.divicompany.eth","coinType":2147525868}
+{"timestamp":"2026-02-17T16:29:34.997Z","message":"CCIP-Read request","sender":"0x6Dea337D5BDBCe2DB66196AbA020bC02e6193b2d","callDataLen":522}
+{"timestamp":"2026-02-17T16:29:34.998Z","message":"Resolving","name":"test.divicompany.eth","node":"0x100c605da9c627fef49b114d682ff596b16f3e47df8401864fe81997e415b861"}
+{"timestamp":"2026-02-17T16:29:34.998Z","message":"No addr for coinType","name":"test.divicompany.eth","coinType":2147492101}
+{"timestamp":"2026-02-17T16:29:34.999Z","message":"CCIP-Read request","sender":"0x6Dea337D5BDBCe2DB66196AbA020bC02e6193b2d","callDataLen":522}
+{"timestamp":"2026-02-17T16:29:35.000Z","message":"Resolving","name":"test.divicompany.eth","node":"0x100c605da9c627fef49b114d682ff596b16f3e47df8401864fe81997e415b861"}
+{"timestamp":"2026-02-17T16:29:35.000Z","message":"Unknown selector","selector":"0x2203ab56"}
+{"timestamp":"2026-02-17T16:29:35.001Z","message":"CCIP-Read request","sender":"0x6Dea337D5BDBCe2DB66196AbA020bC02e6193b2d","callDataLen":458}
+{"timestamp":"2026-02-17T16:29:35.002Z","message":"Resolving","name":"test2.divicompany.eth","node":"0x9cebf732803f7b7a3b80e9c9e310f6f9954e1d9001d57fec3591ee81c8ad6cb1"}
+{"timestamp":"2026-02-17T16:29:35.002Z","message":"No addr record","name":"test2.divicompany.eth"}
+{"timestamp":"2026-02-17T16:29:35.003Z","message":"CCIP-Read request","sender":"0x6Dea337D5BDBCe2DB66196AbA020bC02e6193b2d","callDataLen":458}
+{"timestamp":"2026-02-17T16:29:35.004Z","message":"Resolving","name":"test.divicompany.eth","node":"0x100c605da9c627fef49b114d682ff596b16f3e47df8401864fe81997e415b861"}
+{"timestamp":"2026-02-17T16:29:35.004Z","message":"No addr record","name":"test.divicompany.eth"}
+{"timestamp":"2026-02-17T16:29:35.005Z","message":"CCIP-Read request","sender":"0x6Dea337D5BDBCe2DB66196AbA020bC02e6193b2d","callDataLen":458}
+{"timestamp":"2026-02-17T16:29:35.006Z","message":"Resolving","name":"test.divicompany.eth","node":"0x100c605da9c627fef49b114d682ff596b16f3e47df8401864fe81997e415b861"}
+{"timestamp":"2026-02-17T16:29:35.006Z","message":"No contenthash record","name":"test.divicompany.eth"}
+{"timestamp":"2026-02-17T16:29:38.391Z","message":"CCIP-Read request","sender":"0x6Dea337D5BDBCe2DB66196AbA020bC02e6193b2d","callDataLen":458}
+{"timestamp":"2026-02-17T16:29:38.392Z","message":"Resolving","name":"test3.divicompany.eth","node":"0x6c798ec06cf38b9b1286f8d6c9e7545f2e0dc282082ad1f886cdb94b0bb202b9"}
+{"timestamp":"2026-02-17T16:29:38.393Z","message":"No addr record","name":"test3.divicompany.eth"}
+{"timestamp":"2026-02-17T16:29:38.395Z","message":"CCIP-Read request","sender":"0x6Dea337D5BDBCe2DB66196AbA020bC02e6193b2d","callDataLen":458}
+{"timestamp":"2026-02-17T16:29:38.396Z","message":"Resolving","name":"test.divicompany.eth","node":"0x100c605da9c627fef49b114d682ff596b16f3e47df8401864fe81997e415b861"}
+{"timestamp":"2026-02-17T16:29:38.397Z","message":"No addr record","name":"test.divicompany.eth"}
+{"timestamp":"2026-02-17T16:29:38.399Z","message":"CCIP-Read request","sender":"0x6Dea337D5BDBCe2DB66196AbA020bC02e6193b2d","callDataLen":458}
+{"timestamp":"2026-02-17T16:29:38.400Z","message":"Resolving","name":"test2.divicompany.eth","node":"0x9cebf732803f7b7a3b80e9c9e310f6f9954e1d9001d57fec3591ee81c8ad6cb1"}
+{"timestamp":"2026-02-17T16:29:38.400Z","message":"No addr record","name":"test2.divicompany.eth"}
+{"timestamp":"2026-02-17T16:29:40.648Z","message":"CCIP-Read request","sender":"0x6Dea337D5BDBCe2DB66196AbA020bC02e6193b2d","callDataLen":458}
+{"timestamp":"2026-02-17T16:29:40.650Z","message":"Resolving","name":"test.divicompany.eth","node":"0x100c605da9c627fef49b114d682ff596b16f3e47df8401864fe81997e415b861"}
+{"timestamp":"2026-02-17T16:29:40.650Z","message":"No addr record","name":"test.divicompany.eth"}
+{"timestamp":"2026-02-17T16:29:43.771Z","message":"CCIP-Read request","sender":"0x6Dea337D5BDBCe2DB66196AbA020bC02e6193b2d","callDataLen":458}
+{"timestamp":"2026-02-17T16:29:43.773Z","message":"Resolving","name":"test.divicompany.eth","node":"0x100c605da9c627fef49b114d682ff596b16f3e47df8401864fe81997e415b861"}
+{"timestamp":"2026-02-17T16:29:43.773Z","message":"No addr record","name":"test.divicompany.eth"}
+{"timestamp":"2026-02-17T16:29:45.749Z","message":"CCIP-Read request","sender":"0x6Dea337D5BDBCe2DB66196AbA020bC02e6193b2d","callDataLen":458}
+{"timestamp":"2026-02-17T16:29:45.751Z","message":"Resolving","name":"test3.divicompany.eth","node":"0x6c798ec06cf38b9b1286f8d6c9e7545f2e0dc282082ad1f886cdb94b0bb202b9"}
+{"timestamp":"2026-02-17T16:29:45.751Z","message":"No addr record","name":"test3.divicompany.eth"}
+{"timestamp":"2026-02-17T16:29:45.889Z","message":"CCIP-Read request","sender":"0x6Dea337D5BDBCe2DB66196AbA020bC02e6193b2d","callDataLen":650}
+{"timestamp":"2026-02-17T16:29:45.890Z","message":"Resolving","name":"test.divicompany.eth","node":"0x100c605da9c627fef49b114d682ff596b16f3e47df8401864fe81997e415b861"}
+{"timestamp":"2026-02-17T16:29:45.890Z","message":"No text record","name":"test.divicompany.eth","key":"com.twitter"}
+{"timestamp":"2026-02-17T16:29:45.891Z","message":"CCIP-Read request","sender":"0x6Dea337D5BDBCe2DB66196AbA020bC02e6193b2d","callDataLen":650}
+{"timestamp":"2026-02-17T16:29:45.891Z","message":"Resolving","name":"test.divicompany.eth","node":"0x100c605da9c627fef49b114d682ff596b16f3e47df8401864fe81997e415b861"}
+{"timestamp":"2026-02-17T16:29:45.892Z","message":"No text record","name":"test.divicompany.eth","key":"com.github"}
+{"timestamp":"2026-02-17T16:29:45.893Z","message":"CCIP-Read request","sender":"0x6Dea337D5BDBCe2DB66196AbA020bC02e6193b2d","callDataLen":650}
+{"timestamp":"2026-02-17T16:29:45.893Z","message":"Resolving","name":"test.divicompany.eth","node":"0x100c605da9c627fef49b114d682ff596b16f3e47df8401864fe81997e415b861"}
+{"timestamp":"2026-02-17T16:29:45.894Z","message":"No text record","name":"test.divicompany.eth","key":"com.discord"}
+{"timestamp":"2026-02-17T16:29:45.895Z","message":"CCIP-Read request","sender":"0x6Dea337D5BDBCe2DB66196AbA020bC02e6193b2d","callDataLen":650}
+{"timestamp":"2026-02-17T16:29:45.896Z","message":"Resolving","name":"test.divicompany.eth","node":"0x100c605da9c627fef49b114d682ff596b16f3e47df8401864fe81997e415b861"}
+{"timestamp":"2026-02-17T16:29:45.896Z","message":"No text record","name":"test.divicompany.eth","key":"description"}
+{"timestamp":"2026-02-17T16:29:45.897Z","message":"CCIP-Read request","sender":"0x6Dea337D5BDBCe2DB66196AbA020bC02e6193b2d","callDataLen":650}
+{"timestamp":"2026-02-17T16:29:45.898Z","message":"Resolving","name":"test.divicompany.eth","node":"0x100c605da9c627fef49b114d682ff596b16f3e47df8401864fe81997e415b861"}
+{"timestamp":"2026-02-17T16:29:45.898Z","message":"No text record","name":"test.divicompany.eth","key":"url"}
+{"timestamp":"2026-02-17T16:29:45.899Z","message":"CCIP-Read request","sender":"0x6Dea337D5BDBCe2DB66196AbA020bC02e6193b2d","callDataLen":650}
+{"timestamp":"2026-02-17T16:29:45.900Z","message":"Resolving","name":"test.divicompany.eth","node":"0x100c605da9c627fef49b114d682ff596b16f3e47df8401864fe81997e415b861"}
+{"timestamp":"2026-02-17T16:29:45.900Z","message":"No text record","name":"test.divicompany.eth","key":"email"}
+{"timestamp":"2026-02-17T16:29:45.901Z","message":"CCIP-Read request","sender":"0x6Dea337D5BDBCe2DB66196AbA020bC02e6193b2d","callDataLen":650}
+{"timestamp":"2026-02-17T16:29:45.903Z","message":"Resolving","name":"test.divicompany.eth","node":"0x100c605da9c627fef49b114d682ff596b16f3e47df8401864fe81997e415b861"}
+{"timestamp":"2026-02-17T16:29:45.904Z","message":"No text record","name":"test.divicompany.eth","key":"org.telegram"}
+{"timestamp":"2026-02-17T16:29:45.906Z","message":"CCIP-Read request","sender":"0x6Dea337D5BDBCe2DB66196AbA020bC02e6193b2d","callDataLen":650}
+{"timestamp":"2026-02-17T16:29:45.907Z","message":"Resolving","name":"test.divicompany.eth","node":"0x100c605da9c627fef49b114d682ff596b16f3e47df8401864fe81997e415b861"}
+{"timestamp":"2026-02-17T16:29:45.907Z","message":"No text record","name":"test.divicompany.eth","key":"avatar"}
+{"timestamp":"2026-02-17T16:29:45.910Z","message":"CCIP-Read request","sender":"0x6Dea337D5BDBCe2DB66196AbA020bC02e6193b2d","callDataLen":522}
+{"timestamp":"2026-02-17T16:29:45.912Z","message":"Resolving","name":"test.divicompany.eth","node":"0x100c605da9c627fef49b114d682ff596b16f3e47df8401864fe81997e415b861"}
+{"timestamp":"2026-02-17T16:29:45.912Z","message":"No addr for coinType","name":"test.divicompany.eth","coinType":2147483648}
+{"timestamp":"2026-02-17T16:29:45.913Z","message":"CCIP-Read request","sender":"0x6Dea337D5BDBCe2DB66196AbA020bC02e6193b2d","callDataLen":650}
+{"timestamp":"2026-02-17T16:29:45.914Z","message":"Resolving","name":"test.divicompany.eth","node":"0x100c605da9c627fef49b114d682ff596b16f3e47df8401864fe81997e415b861"}
+{"timestamp":"2026-02-17T16:29:45.914Z","message":"No text record","name":"test.divicompany.eth","key":"location"}
+{"timestamp":"2026-02-17T16:29:45.915Z","message":"CCIP-Read request","sender":"0x6Dea337D5BDBCe2DB66196AbA020bC02e6193b2d","callDataLen":458}
+{"timestamp":"2026-02-17T16:29:45.916Z","message":"Resolving","name":"test.divicompany.eth","node":"0x100c605da9c627fef49b114d682ff596b16f3e47df8401864fe81997e415b861"}
+{"timestamp":"2026-02-17T16:29:45.916Z","message":"No addr record","name":"test.divicompany.eth"}
+{"timestamp":"2026-02-17T16:29:45.918Z","message":"CCIP-Read request","sender":"0x6Dea337D5BDBCe2DB66196AbA020bC02e6193b2d","callDataLen":650}
+{"timestamp":"2026-02-17T16:29:45.919Z","message":"Resolving","name":"test.divicompany.eth","node":"0x100c605da9c627fef49b114d682ff596b16f3e47df8401864fe81997e415b861"}
+{"timestamp":"2026-02-17T16:29:45.919Z","message":"No text record","name":"test.divicompany.eth","key":"name"}
+{"timestamp":"2026-02-17T16:29:45.921Z","message":"CCIP-Read request","sender":"0x6Dea337D5BDBCe2DB66196AbA020bC02e6193b2d","callDataLen":522}
+{"timestamp":"2026-02-17T16:29:45.921Z","message":"Resolving","name":"test.divicompany.eth","node":"0x100c605da9c627fef49b114d682ff596b16f3e47df8401864fe81997e415b861"}
+{"timestamp":"2026-02-17T16:29:45.922Z","message":"No addr for coinType","name":"test.divicompany.eth","coinType":2147525809}
+{"timestamp":"2026-02-17T16:29:45.922Z","message":"CCIP-Read request","sender":"0x6Dea337D5BDBCe2DB66196AbA020bC02e6193b2d","callDataLen":522}
+{"timestamp":"2026-02-17T16:29:45.923Z","message":"Resolving","name":"test.divicompany.eth","node":"0x100c605da9c627fef49b114d682ff596b16f3e47df8401864fe81997e415b861"}
+{"timestamp":"2026-02-17T16:29:45.923Z","message":"No addr for coinType","name":"test.divicompany.eth","coinType":501}
+{"timestamp":"2026-02-17T16:29:45.924Z","message":"CCIP-Read request","sender":"0x6Dea337D5BDBCe2DB66196AbA020bC02e6193b2d","callDataLen":522}
+{"timestamp":"2026-02-17T16:29:45.924Z","message":"Resolving","name":"test.divicompany.eth","node":"0x100c605da9c627fef49b114d682ff596b16f3e47df8401864fe81997e415b861"}
+{"timestamp":"2026-02-17T16:29:45.925Z","message":"No addr for coinType","name":"test.divicompany.eth","coinType":2147483658}
+{"timestamp":"2026-02-17T16:29:45.926Z","message":"CCIP-Read request","sender":"0x6Dea337D5BDBCe2DB66196AbA020bC02e6193b2d","callDataLen":522}
+{"timestamp":"2026-02-17T16:29:45.926Z","message":"Resolving","name":"test.divicompany.eth","node":"0x100c605da9c627fef49b114d682ff596b16f3e47df8401864fe81997e415b861"}
+{"timestamp":"2026-02-17T16:29:45.927Z","message":"No addr for coinType","name":"test.divicompany.eth","coinType":2147492101}
+{"timestamp":"2026-02-17T16:29:45.927Z","message":"CCIP-Read request","sender":"0x6Dea337D5BDBCe2DB66196AbA020bC02e6193b2d","callDataLen":522}
+{"timestamp":"2026-02-17T16:29:45.928Z","message":"Resolving","name":"test.divicompany.eth","node":"0x100c605da9c627fef49b114d682ff596b16f3e47df8401864fe81997e415b861"}
+{"timestamp":"2026-02-17T16:29:45.928Z","message":"No addr for coinType","name":"test.divicompany.eth","coinType":0}
+{"timestamp":"2026-02-17T16:29:45.929Z","message":"CCIP-Read request","sender":"0x6Dea337D5BDBCe2DB66196AbA020bC02e6193b2d","callDataLen":522}
+{"timestamp":"2026-02-17T16:29:45.929Z","message":"Resolving","name":"test.divicompany.eth","node":"0x100c605da9c627fef49b114d682ff596b16f3e47df8401864fe81997e415b861"}
+{"timestamp":"2026-02-17T16:29:45.929Z","message":"No addr for coinType","name":"test.divicompany.eth","coinType":2147542792}
+{"timestamp":"2026-02-17T16:29:45.930Z","message":"CCIP-Read request","sender":"0x6Dea337D5BDBCe2DB66196AbA020bC02e6193b2d","callDataLen":522}
+{"timestamp":"2026-02-17T16:29:45.930Z","message":"Resolving","name":"test.divicompany.eth","node":"0x100c605da9c627fef49b114d682ff596b16f3e47df8401864fe81997e415b861"}
+{"timestamp":"2026-02-17T16:29:45.930Z","message":"No addr for coinType","name":"test.divicompany.eth","coinType":2147483785}
+{"timestamp":"2026-02-17T16:29:45.931Z","message":"CCIP-Read request","sender":"0x6Dea337D5BDBCe2DB66196AbA020bC02e6193b2d","callDataLen":522}
+{"timestamp":"2026-02-17T16:29:45.932Z","message":"Resolving","name":"test.divicompany.eth","node":"0x100c605da9c627fef49b114d682ff596b16f3e47df8401864fe81997e415b861"}
+{"timestamp":"2026-02-17T16:29:45.932Z","message":"No addr for coinType","name":"test.divicompany.eth","coinType":2148018000}
+{"timestamp":"2026-02-17T16:29:45.932Z","message":"CCIP-Read request","sender":"0x6Dea337D5BDBCe2DB66196AbA020bC02e6193b2d","callDataLen":458}
+{"timestamp":"2026-02-17T16:29:45.933Z","message":"Resolving","name":"test.divicompany.eth","node":"0x100c605da9c627fef49b114d682ff596b16f3e47df8401864fe81997e415b861"}
+{"timestamp":"2026-02-17T16:29:45.933Z","message":"No contenthash record","name":"test.divicompany.eth"}
+{"timestamp":"2026-02-17T16:29:45.933Z","message":"CCIP-Read request","sender":"0x6Dea337D5BDBCe2DB66196AbA020bC02e6193b2d","callDataLen":522}
+{"timestamp":"2026-02-17T16:29:45.934Z","message":"Resolving","name":"test.divicompany.eth","node":"0x100c605da9c627fef49b114d682ff596b16f3e47df8401864fe81997e415b861"}
+{"timestamp":"2026-02-17T16:29:45.934Z","message":"No addr for coinType","name":"test.divicompany.eth","coinType":2147525868}
+{"timestamp":"2026-02-17T16:29:45.935Z","message":"CCIP-Read request","sender":"0x6Dea337D5BDBCe2DB66196AbA020bC02e6193b2d","callDataLen":458}
+{"timestamp":"2026-02-17T16:29:45.935Z","message":"Resolving","name":"test.divicompany.eth","node":"0x100c605da9c627fef49b114d682ff596b16f3e47df8401864fe81997e415b861"}
+{"timestamp":"2026-02-17T16:29:45.936Z","message":"No addr record","name":"test.divicompany.eth"}
+{"timestamp":"2026-02-17T16:29:45.936Z","message":"CCIP-Read request","sender":"0x6Dea337D5BDBCe2DB66196AbA020bC02e6193b2d","callDataLen":522}
+{"timestamp":"2026-02-17T16:29:45.937Z","message":"Resolving","name":"test.divicompany.eth","node":"0x100c605da9c627fef49b114d682ff596b16f3e47df8401864fe81997e415b861"}
+{"timestamp":"2026-02-17T16:29:45.937Z","message":"Unknown selector","selector":"0x2203ab56"}
+{"timestamp":"2026-02-17T16:29:47.664Z","message":"CCIP-Read request","sender":"0x6Dea337D5BDBCe2DB66196AbA020bC02e6193b2d","callDataLen":458}
+{"timestamp":"2026-02-17T16:29:47.665Z","message":"Resolving","name":"test.divicompany.eth","node":"0x100c605da9c627fef49b114d682ff596b16f3e47df8401864fe81997e415b861"}
+{"timestamp":"2026-02-17T16:29:47.666Z","message":"No addr record","name":"test.divicompany.eth"}
+{"timestamp":"2026-02-17T16:29:47.675Z","message":"CCIP-Read request","sender":"0x6Dea337D5BDBCe2DB66196AbA020bC02e6193b2d","callDataLen":650}
+{"timestamp":"2026-02-17T16:29:47.676Z","message":"Resolving","name":"test.divicompany.eth","node":"0x100c605da9c627fef49b114d682ff596b16f3e47df8401864fe81997e415b861"}
+{"timestamp":"2026-02-17T16:29:47.676Z","message":"No text record","name":"test.divicompany.eth","key":"com.twitter"}
+{"timestamp":"2026-02-17T16:29:47.679Z","message":"CCIP-Read request","sender":"0x6Dea337D5BDBCe2DB66196AbA020bC02e6193b2d","callDataLen":650}
+{"timestamp":"2026-02-17T16:29:47.679Z","message":"Resolving","name":"test.divicompany.eth","node":"0x100c605da9c627fef49b114d682ff596b16f3e47df8401864fe81997e415b861"}
+{"timestamp":"2026-02-17T16:29:47.680Z","message":"No text record","name":"test.divicompany.eth","key":"com.github"}
+{"timestamp":"2026-02-17T16:29:47.683Z","message":"CCIP-Read request","sender":"0x6Dea337D5BDBCe2DB66196AbA020bC02e6193b2d","callDataLen":650}
+{"timestamp":"2026-02-17T16:29:47.684Z","message":"Resolving","name":"test.divicompany.eth","node":"0x100c605da9c627fef49b114d682ff596b16f3e47df8401864fe81997e415b861"}
+{"timestamp":"2026-02-17T16:29:47.685Z","message":"No text record","name":"test.divicompany.eth","key":"com.discord"}
+{"timestamp":"2026-02-17T16:29:47.687Z","message":"CCIP-Read request","sender":"0x6Dea337D5BDBCe2DB66196AbA020bC02e6193b2d","callDataLen":650}
+{"timestamp":"2026-02-17T16:29:47.688Z","message":"Resolving","name":"test.divicompany.eth","node":"0x100c605da9c627fef49b114d682ff596b16f3e47df8401864fe81997e415b861"}
+{"timestamp":"2026-02-17T16:29:47.688Z","message":"No text record","name":"test.divicompany.eth","key":"org.telegram"}
+{"timestamp":"2026-02-17T16:29:47.690Z","message":"CCIP-Read request","sender":"0x6Dea337D5BDBCe2DB66196AbA020bC02e6193b2d","callDataLen":650}
+{"timestamp":"2026-02-17T16:29:47.691Z","message":"Resolving","name":"test.divicompany.eth","node":"0x100c605da9c627fef49b114d682ff596b16f3e47df8401864fe81997e415b861"}
+{"timestamp":"2026-02-17T16:29:47.692Z","message":"No text record","name":"test.divicompany.eth","key":"email"}
+{"timestamp":"2026-02-17T16:29:47.694Z","message":"CCIP-Read request","sender":"0x6Dea337D5BDBCe2DB66196AbA020bC02e6193b2d","callDataLen":650}
+{"timestamp":"2026-02-17T16:29:47.695Z","message":"Resolving","name":"test.divicompany.eth","node":"0x100c605da9c627fef49b114d682ff596b16f3e47df8401864fe81997e415b861"}
+{"timestamp":"2026-02-17T16:29:47.695Z","message":"No text record","name":"test.divicompany.eth","key":"description"}
+{"timestamp":"2026-02-17T16:29:47.696Z","message":"CCIP-Read request","sender":"0x6Dea337D5BDBCe2DB66196AbA020bC02e6193b2d","callDataLen":650}
+{"timestamp":"2026-02-17T16:29:47.697Z","message":"Resolving","name":"test.divicompany.eth","node":"0x100c605da9c627fef49b114d682ff596b16f3e47df8401864fe81997e415b861"}
+{"timestamp":"2026-02-17T16:29:47.698Z","message":"No text record","name":"test.divicompany.eth","key":"name"}
+{"timestamp":"2026-02-17T16:29:47.699Z","message":"CCIP-Read request","sender":"0x6Dea337D5BDBCe2DB66196AbA020bC02e6193b2d","callDataLen":650}
+{"timestamp":"2026-02-17T16:29:47.699Z","message":"Resolving","name":"test.divicompany.eth","node":"0x100c605da9c627fef49b114d682ff596b16f3e47df8401864fe81997e415b861"}
+{"timestamp":"2026-02-17T16:29:47.700Z","message":"No text record","name":"test.divicompany.eth","key":"avatar"}
+{"timestamp":"2026-02-17T16:29:47.700Z","message":"CCIP-Read request","sender":"0x6Dea337D5BDBCe2DB66196AbA020bC02e6193b2d","callDataLen":522}
+{"timestamp":"2026-02-17T16:29:47.701Z","message":"Resolving","name":"test.divicompany.eth","node":"0x100c605da9c627fef49b114d682ff596b16f3e47df8401864fe81997e415b861"}
+{"timestamp":"2026-02-17T16:29:47.701Z","message":"No addr for coinType","name":"test.divicompany.eth","coinType":2147483648}
+{"timestamp":"2026-02-17T16:29:47.702Z","message":"CCIP-Read request","sender":"0x6Dea337D5BDBCe2DB66196AbA020bC02e6193b2d","callDataLen":458}
+{"timestamp":"2026-02-17T16:29:47.703Z","message":"Resolving","name":"test.divicompany.eth","node":"0x100c605da9c627fef49b114d682ff596b16f3e47df8401864fe81997e415b861"}
+{"timestamp":"2026-02-17T16:29:47.703Z","message":"No addr record","name":"test.divicompany.eth"}
+{"timestamp":"2026-02-17T16:29:47.704Z","message":"CCIP-Read request","sender":"0x6Dea337D5BDBCe2DB66196AbA020bC02e6193b2d","callDataLen":650}
+{"timestamp":"2026-02-17T16:29:47.704Z","message":"Resolving","name":"test.divicompany.eth","node":"0x100c605da9c627fef49b114d682ff596b16f3e47df8401864fe81997e415b861"}
+{"timestamp":"2026-02-17T16:29:47.704Z","message":"No text record","name":"test.divicompany.eth","key":"url"}
+{"timestamp":"2026-02-17T16:29:47.705Z","message":"CCIP-Read request","sender":"0x6Dea337D5BDBCe2DB66196AbA020bC02e6193b2d","callDataLen":522}
+{"timestamp":"2026-02-17T16:29:47.706Z","message":"Resolving","name":"test.divicompany.eth","node":"0x100c605da9c627fef49b114d682ff596b16f3e47df8401864fe81997e415b861"}
+{"timestamp":"2026-02-17T16:29:47.706Z","message":"No addr for coinType","name":"test.divicompany.eth","coinType":0}
+{"timestamp":"2026-02-17T16:29:47.707Z","message":"CCIP-Read request","sender":"0x6Dea337D5BDBCe2DB66196AbA020bC02e6193b2d","callDataLen":522}
+{"timestamp":"2026-02-17T16:29:47.707Z","message":"Resolving","name":"test.divicompany.eth","node":"0x100c605da9c627fef49b114d682ff596b16f3e47df8401864fe81997e415b861"}
+{"timestamp":"2026-02-17T16:29:47.707Z","message":"No addr for coinType","name":"test.divicompany.eth","coinType":2147483658}
+{"timestamp":"2026-02-17T16:29:47.708Z","message":"CCIP-Read request","sender":"0x6Dea337D5BDBCe2DB66196AbA020bC02e6193b2d","callDataLen":522}
+{"timestamp":"2026-02-17T16:29:47.709Z","message":"Resolving","name":"test.divicompany.eth","node":"0x100c605da9c627fef49b114d682ff596b16f3e47df8401864fe81997e415b861"}
+{"timestamp":"2026-02-17T16:29:47.709Z","message":"No addr for coinType","name":"test.divicompany.eth","coinType":501}
+{"timestamp":"2026-02-17T16:29:47.710Z","message":"CCIP-Read request","sender":"0x6Dea337D5BDBCe2DB66196AbA020bC02e6193b2d","callDataLen":522}
+{"timestamp":"2026-02-17T16:29:47.710Z","message":"Resolving","name":"test.divicompany.eth","node":"0x100c605da9c627fef49b114d682ff596b16f3e47df8401864fe81997e415b861"}
+{"timestamp":"2026-02-17T16:29:47.710Z","message":"No addr for coinType","name":"test.divicompany.eth","coinType":2147525809}
+{"timestamp":"2026-02-17T16:29:47.711Z","message":"CCIP-Read request","sender":"0x6Dea337D5BDBCe2DB66196AbA020bC02e6193b2d","callDataLen":650}
+{"timestamp":"2026-02-17T16:29:47.712Z","message":"Resolving","name":"test.divicompany.eth","node":"0x100c605da9c627fef49b114d682ff596b16f3e47df8401864fe81997e415b861"}
+{"timestamp":"2026-02-17T16:29:47.712Z","message":"No text record","name":"test.divicompany.eth","key":"location"}
+{"timestamp":"2026-02-17T16:29:47.713Z","message":"CCIP-Read request","sender":"0x6Dea337D5BDBCe2DB66196AbA020bC02e6193b2d","callDataLen":522}
+{"timestamp":"2026-02-17T16:29:47.713Z","message":"Resolving","name":"test.divicompany.eth","node":"0x100c605da9c627fef49b114d682ff596b16f3e47df8401864fe81997e415b861"}
+{"timestamp":"2026-02-17T16:29:47.714Z","message":"No addr for coinType","name":"test.divicompany.eth","coinType":2147483785}
+{"timestamp":"2026-02-17T16:29:47.714Z","message":"CCIP-Read request","sender":"0x6Dea337D5BDBCe2DB66196AbA020bC02e6193b2d","callDataLen":522}
+{"timestamp":"2026-02-17T16:29:47.715Z","message":"Resolving","name":"test.divicompany.eth","node":"0x100c605da9c627fef49b114d682ff596b16f3e47df8401864fe81997e415b861"}
+{"timestamp":"2026-02-17T16:29:47.715Z","message":"No addr for coinType","name":"test.divicompany.eth","coinType":2147542792}
+{"timestamp":"2026-02-17T16:29:47.716Z","message":"CCIP-Read request","sender":"0x6Dea337D5BDBCe2DB66196AbA020bC02e6193b2d","callDataLen":522}
+{"timestamp":"2026-02-17T16:29:47.716Z","message":"Resolving","name":"test.divicompany.eth","node":"0x100c605da9c627fef49b114d682ff596b16f3e47df8401864fe81997e415b861"}
+{"timestamp":"2026-02-17T16:29:47.716Z","message":"No addr for coinType","name":"test.divicompany.eth","coinType":2148018000}
+{"timestamp":"2026-02-17T16:29:47.717Z","message":"CCIP-Read request","sender":"0x6Dea337D5BDBCe2DB66196AbA020bC02e6193b2d","callDataLen":522}
+{"timestamp":"2026-02-17T16:29:47.718Z","message":"Resolving","name":"test.divicompany.eth","node":"0x100c605da9c627fef49b114d682ff596b16f3e47df8401864fe81997e415b861"}
+{"timestamp":"2026-02-17T16:29:47.718Z","message":"No addr for coinType","name":"test.divicompany.eth","coinType":2147525868}
+{"timestamp":"2026-02-17T16:29:47.718Z","message":"CCIP-Read request","sender":"0x6Dea337D5BDBCe2DB66196AbA020bC02e6193b2d","callDataLen":522}
+{"timestamp":"2026-02-17T16:29:47.719Z","message":"Resolving","name":"test.divicompany.eth","node":"0x100c605da9c627fef49b114d682ff596b16f3e47df8401864fe81997e415b861"}
+{"timestamp":"2026-02-17T16:29:47.719Z","message":"No addr for coinType","name":"test.divicompany.eth","coinType":2147492101}
+{"timestamp":"2026-02-17T16:29:47.720Z","message":"CCIP-Read request","sender":"0x6Dea337D5BDBCe2DB66196AbA020bC02e6193b2d","callDataLen":522}
+{"timestamp":"2026-02-17T16:29:47.721Z","message":"Resolving","name":"test.divicompany.eth","node":"0x100c605da9c627fef49b114d682ff596b16f3e47df8401864fe81997e415b861"}
+{"timestamp":"2026-02-17T16:29:47.721Z","message":"Unknown selector","selector":"0x2203ab56"}
+{"timestamp":"2026-02-17T16:29:47.721Z","message":"CCIP-Read request","sender":"0x6Dea337D5BDBCe2DB66196AbA020bC02e6193b2d","callDataLen":458}
+{"timestamp":"2026-02-17T16:29:47.722Z","message":"Resolving","name":"test.divicompany.eth","node":"0x100c605da9c627fef49b114d682ff596b16f3e47df8401864fe81997e415b861"}
+{"timestamp":"2026-02-17T16:29:47.722Z","message":"No contenthash record","name":"test.divicompany.eth"}
+{"timestamp":"2026-02-17T16:29:52.804Z","message":"CCIP-Read request","sender":"0x6Dea337D5BDBCe2DB66196AbA020bC02e6193b2d","callDataLen":458}
+{"timestamp":"2026-02-17T16:29:52.807Z","message":"Resolving","name":"test.divicompany.eth","node":"0x100c605da9c627fef49b114d682ff596b16f3e47df8401864fe81997e415b861"}
+{"timestamp":"2026-02-17T16:29:52.809Z","message":"No addr record","name":"test.divicompany.eth"}
+{"timestamp":"2026-02-17T16:29:52.812Z","message":"CCIP-Read request","sender":"0x6Dea337D5BDBCe2DB66196AbA020bC02e6193b2d","callDataLen":458}
+{"timestamp":"2026-02-17T16:29:52.813Z","message":"Resolving","name":"test3.divicompany.eth","node":"0x6c798ec06cf38b9b1286f8d6c9e7545f2e0dc282082ad1f886cdb94b0bb202b9"}
+{"timestamp":"2026-02-17T16:29:52.813Z","message":"No addr record","name":"test3.divicompany.eth"}
+{"timestamp":"2026-02-17T16:29:56.671Z","message":"CCIP-Read request","sender":"0x6Dea337D5BDBCe2DB66196AbA020bC02e6193b2d","callDataLen":458}
+{"timestamp":"2026-02-17T16:29:56.673Z","message":"Resolving","name":"test.divicompany.eth","node":"0x100c605da9c627fef49b114d682ff596b16f3e47df8401864fe81997e415b861"}
+{"timestamp":"2026-02-17T16:29:56.674Z","message":"No addr record","name":"test.divicompany.eth"}
+{"timestamp":"2026-02-17T16:29:56.676Z","message":"CCIP-Read request","sender":"0x6Dea337D5BDBCe2DB66196AbA020bC02e6193b2d","callDataLen":458}
+{"timestamp":"2026-02-17T16:29:56.677Z","message":"Resolving","name":"test3.divicompany.eth","node":"0x6c798ec06cf38b9b1286f8d6c9e7545f2e0dc282082ad1f886cdb94b0bb202b9"}
+{"timestamp":"2026-02-17T16:29:56.677Z","message":"No addr record","name":"test3.divicompany.eth"}
+{"timestamp":"2026-02-17T16:29:58.112Z","message":"CCIP-Read request","sender":"0x6Dea337D5BDBCe2DB66196AbA020bC02e6193b2d","callDataLen":458}
+{"timestamp":"2026-02-17T16:29:58.113Z","message":"Resolving","name":"test.divicompany.eth","node":"0x100c605da9c627fef49b114d682ff596b16f3e47df8401864fe81997e415b861"}
+{"timestamp":"2026-02-17T16:29:58.114Z","message":"No addr record","name":"test.divicompany.eth"}
+{"timestamp":"2026-02-17T16:29:58.116Z","message":"CCIP-Read request","sender":"0x6Dea337D5BDBCe2DB66196AbA020bC02e6193b2d","callDataLen":458}
+{"timestamp":"2026-02-17T16:29:58.117Z","message":"Resolving","name":"test3.divicompany.eth","node":"0x6c798ec06cf38b9b1286f8d6c9e7545f2e0dc282082ad1f886cdb94b0bb202b9"}
+{"timestamp":"2026-02-17T16:29:58.118Z","message":"No addr record","name":"test3.divicompany.eth"}
+{"timestamp":"2026-02-17T16:45:58.685Z","message":"CCIP-Read request","sender":"0x6Dea337D5BDBCe2DB66196AbA020bC02e6193b2d","callDataLen":458}
+{"timestamp":"2026-02-17T16:45:58.689Z","message":"Resolving","name":"test.divicompany.eth","node":"0x100c605da9c627fef49b114d682ff596b16f3e47df8401864fe81997e415b861"}
+{"timestamp":"2026-02-17T16:45:58.689Z","message":"No addr record","name":"test.divicompany.eth"}
+{"timestamp":"2026-02-17T16:45:58.693Z","message":"CCIP-Read request","sender":"0x6Dea337D5BDBCe2DB66196AbA020bC02e6193b2d","callDataLen":650}
+{"timestamp":"2026-02-17T16:45:58.697Z","message":"Resolving","name":"test.divicompany.eth","node":"0x100c605da9c627fef49b114d682ff596b16f3e47df8401864fe81997e415b861"}
+{"timestamp":"2026-02-17T16:45:58.698Z","message":"No text record","name":"test.divicompany.eth","key":"com.twitter"}
+{"timestamp":"2026-02-17T16:45:58.701Z","message":"CCIP-Read request","sender":"0x6Dea337D5BDBCe2DB66196AbA020bC02e6193b2d","callDataLen":650}
+{"timestamp":"2026-02-17T16:45:58.702Z","message":"Resolving","name":"test.divicompany.eth","node":"0x100c605da9c627fef49b114d682ff596b16f3e47df8401864fe81997e415b861"}
+{"timestamp":"2026-02-17T16:45:58.702Z","message":"No text record","name":"test.divicompany.eth","key":"email"}
+{"timestamp":"2026-02-17T16:45:58.704Z","message":"CCIP-Read request","sender":"0x6Dea337D5BDBCe2DB66196AbA020bC02e6193b2d","callDataLen":650}
+{"timestamp":"2026-02-17T16:45:58.705Z","message":"Resolving","name":"test.divicompany.eth","node":"0x100c605da9c627fef49b114d682ff596b16f3e47df8401864fe81997e415b861"}
+{"timestamp":"2026-02-17T16:45:58.705Z","message":"No text record","name":"test.divicompany.eth","key":"com.github"}
+{"timestamp":"2026-02-17T16:45:58.708Z","message":"CCIP-Read request","sender":"0x6Dea337D5BDBCe2DB66196AbA020bC02e6193b2d","callDataLen":650}
+{"timestamp":"2026-02-17T16:45:58.709Z","message":"Resolving","name":"test.divicompany.eth","node":"0x100c605da9c627fef49b114d682ff596b16f3e47df8401864fe81997e415b861"}
+{"timestamp":"2026-02-17T16:45:58.710Z","message":"No text record","name":"test.divicompany.eth","key":"url"}
+{"timestamp":"2026-02-17T16:45:58.712Z","message":"CCIP-Read request","sender":"0x6Dea337D5BDBCe2DB66196AbA020bC02e6193b2d","callDataLen":650}
+{"timestamp":"2026-02-17T16:45:58.712Z","message":"Resolving","name":"test.divicompany.eth","node":"0x100c605da9c627fef49b114d682ff596b16f3e47df8401864fe81997e415b861"}
+{"timestamp":"2026-02-17T16:45:58.713Z","message":"No text record","name":"test.divicompany.eth","key":"name"}
+{"timestamp":"2026-02-17T16:45:58.715Z","message":"CCIP-Read request","sender":"0x6Dea337D5BDBCe2DB66196AbA020bC02e6193b2d","callDataLen":650}
+{"timestamp":"2026-02-17T16:45:58.716Z","message":"Resolving","name":"test.divicompany.eth","node":"0x100c605da9c627fef49b114d682ff596b16f3e47df8401864fe81997e415b861"}
+{"timestamp":"2026-02-17T16:45:58.717Z","message":"No text record","name":"test.divicompany.eth","key":"org.telegram"}
+{"timestamp":"2026-02-17T16:45:58.718Z","message":"CCIP-Read request","sender":"0x6Dea337D5BDBCe2DB66196AbA020bC02e6193b2d","callDataLen":650}
+{"timestamp":"2026-02-17T16:45:58.718Z","message":"Resolving","name":"test.divicompany.eth","node":"0x100c605da9c627fef49b114d682ff596b16f3e47df8401864fe81997e415b861"}
+{"timestamp":"2026-02-17T16:45:58.718Z","message":"No text record","name":"test.divicompany.eth","key":"avatar"}
+{"timestamp":"2026-02-17T16:45:58.753Z","message":"CCIP-Read request","sender":"0x6Dea337D5BDBCe2DB66196AbA020bC02e6193b2d","callDataLen":522}
+{"timestamp":"2026-02-17T16:45:58.754Z","message":"Resolving","name":"test.divicompany.eth","node":"0x100c605da9c627fef49b114d682ff596b16f3e47df8401864fe81997e415b861"}
+{"timestamp":"2026-02-17T16:45:58.755Z","message":"No addr for coinType","name":"test.divicompany.eth","coinType":0}
+{"timestamp":"2026-02-17T16:45:58.756Z","message":"CCIP-Read request","sender":"0x6Dea337D5BDBCe2DB66196AbA020bC02e6193b2d","callDataLen":650}
+{"timestamp":"2026-02-17T16:45:58.757Z","message":"Resolving","name":"test.divicompany.eth","node":"0x100c605da9c627fef49b114d682ff596b16f3e47df8401864fe81997e415b861"}
+{"timestamp":"2026-02-17T16:45:58.758Z","message":"No text record","name":"test.divicompany.eth","key":"location"}
+{"timestamp":"2026-02-17T16:45:58.763Z","message":"CCIP-Read request","sender":"0x6Dea337D5BDBCe2DB66196AbA020bC02e6193b2d","callDataLen":650}
+{"timestamp":"2026-02-17T16:45:58.764Z","message":"Resolving","name":"test.divicompany.eth","node":"0x100c605da9c627fef49b114d682ff596b16f3e47df8401864fe81997e415b861"}
+{"timestamp":"2026-02-17T16:45:58.764Z","message":"No text record","name":"test.divicompany.eth","key":"description"}
+{"timestamp":"2026-02-17T16:45:58.766Z","message":"CCIP-Read request","sender":"0x6Dea337D5BDBCe2DB66196AbA020bC02e6193b2d","callDataLen":522}
+{"timestamp":"2026-02-17T16:45:58.767Z","message":"Resolving","name":"test.divicompany.eth","node":"0x100c605da9c627fef49b114d682ff596b16f3e47df8401864fe81997e415b861"}
+{"timestamp":"2026-02-17T16:45:58.767Z","message":"No addr for coinType","name":"test.divicompany.eth","coinType":2147525809}
+{"timestamp":"2026-02-17T16:45:58.769Z","message":"CCIP-Read request","sender":"0x6Dea337D5BDBCe2DB66196AbA020bC02e6193b2d","callDataLen":522}
+{"timestamp":"2026-02-17T16:45:58.769Z","message":"Resolving","name":"test.divicompany.eth","node":"0x100c605da9c627fef49b114d682ff596b16f3e47df8401864fe81997e415b861"}
+{"timestamp":"2026-02-17T16:45:58.770Z","message":"No addr for coinType","name":"test.divicompany.eth","coinType":501}
+{"timestamp":"2026-02-17T16:45:58.772Z","message":"CCIP-Read request","sender":"0x6Dea337D5BDBCe2DB66196AbA020bC02e6193b2d","callDataLen":522}
+{"timestamp":"2026-02-17T16:45:58.772Z","message":"Resolving","name":"test.divicompany.eth","node":"0x100c605da9c627fef49b114d682ff596b16f3e47df8401864fe81997e415b861"}
+{"timestamp":"2026-02-17T16:45:58.772Z","message":"No addr for coinType","name":"test.divicompany.eth","coinType":2147492101}
+{"timestamp":"2026-02-17T16:45:58.774Z","message":"CCIP-Read request","sender":"0x6Dea337D5BDBCe2DB66196AbA020bC02e6193b2d","callDataLen":522}
+{"timestamp":"2026-02-17T16:45:58.775Z","message":"Resolving","name":"test.divicompany.eth","node":"0x100c605da9c627fef49b114d682ff596b16f3e47df8401864fe81997e415b861"}
+{"timestamp":"2026-02-17T16:45:58.775Z","message":"No addr for coinType","name":"test.divicompany.eth","coinType":2147483648}
+{"timestamp":"2026-02-17T16:45:58.777Z","message":"CCIP-Read request","sender":"0x6Dea337D5BDBCe2DB66196AbA020bC02e6193b2d","callDataLen":650}
+{"timestamp":"2026-02-17T16:45:58.782Z","message":"Resolving","name":"test.divicompany.eth","node":"0x100c605da9c627fef49b114d682ff596b16f3e47df8401864fe81997e415b861"}
+{"timestamp":"2026-02-17T16:45:58.782Z","message":"No text record","name":"test.divicompany.eth","key":"com.discord"}
+{"timestamp":"2026-02-17T16:45:58.783Z","message":"CCIP-Read request","sender":"0x6Dea337D5BDBCe2DB66196AbA020bC02e6193b2d","callDataLen":522}
+{"timestamp":"2026-02-17T16:45:58.783Z","message":"Resolving","name":"test.divicompany.eth","node":"0x100c605da9c627fef49b114d682ff596b16f3e47df8401864fe81997e415b861"}
+{"timestamp":"2026-02-17T16:45:58.784Z","message":"No addr for coinType","name":"test.divicompany.eth","coinType":2147483658}
+{"timestamp":"2026-02-17T16:45:58.784Z","message":"CCIP-Read request","sender":"0x6Dea337D5BDBCe2DB66196AbA020bC02e6193b2d","callDataLen":522}
+{"timestamp":"2026-02-17T16:45:58.785Z","message":"Resolving","name":"test.divicompany.eth","node":"0x100c605da9c627fef49b114d682ff596b16f3e47df8401864fe81997e415b861"}
+{"timestamp":"2026-02-17T16:45:58.785Z","message":"No addr for coinType","name":"test.divicompany.eth","coinType":2147525868}
+{"timestamp":"2026-02-17T16:45:58.786Z","message":"CCIP-Read request","sender":"0x6Dea337D5BDBCe2DB66196AbA020bC02e6193b2d","callDataLen":522}
+{"timestamp":"2026-02-17T16:45:58.787Z","message":"Resolving","name":"test.divicompany.eth","node":"0x100c605da9c627fef49b114d682ff596b16f3e47df8401864fe81997e415b861"}
+{"timestamp":"2026-02-17T16:45:58.787Z","message":"No addr for coinType","name":"test.divicompany.eth","coinType":2147542792}
+{"timestamp":"2026-02-17T16:45:58.788Z","message":"CCIP-Read request","sender":"0x6Dea337D5BDBCe2DB66196AbA020bC02e6193b2d","callDataLen":522}
+{"timestamp":"2026-02-17T16:45:58.788Z","message":"Resolving","name":"test.divicompany.eth","node":"0x100c605da9c627fef49b114d682ff596b16f3e47df8401864fe81997e415b861"}
+{"timestamp":"2026-02-17T16:45:58.788Z","message":"No addr for coinType","name":"test.divicompany.eth","coinType":2148018000}
+{"timestamp":"2026-02-17T16:45:58.789Z","message":"CCIP-Read request","sender":"0x6Dea337D5BDBCe2DB66196AbA020bC02e6193b2d","callDataLen":522}
+{"timestamp":"2026-02-17T16:45:58.790Z","message":"Resolving","name":"test.divicompany.eth","node":"0x100c605da9c627fef49b114d682ff596b16f3e47df8401864fe81997e415b861"}
+{"timestamp":"2026-02-17T16:45:58.790Z","message":"No addr for coinType","name":"test.divicompany.eth","coinType":2147483785}
+{"timestamp":"2026-02-17T16:45:58.790Z","message":"CCIP-Read request","sender":"0x6Dea337D5BDBCe2DB66196AbA020bC02e6193b2d","callDataLen":522}
+{"timestamp":"2026-02-17T16:45:58.791Z","message":"Resolving","name":"test.divicompany.eth","node":"0x100c605da9c627fef49b114d682ff596b16f3e47df8401864fe81997e415b861"}
+{"timestamp":"2026-02-17T16:45:58.791Z","message":"Unknown selector","selector":"0x2203ab56"}
+{"timestamp":"2026-02-17T16:45:58.792Z","message":"CCIP-Read request","sender":"0x6Dea337D5BDBCe2DB66196AbA020bC02e6193b2d","callDataLen":458}
+{"timestamp":"2026-02-17T16:45:58.792Z","message":"Resolving","name":"test.divicompany.eth","node":"0x100c605da9c627fef49b114d682ff596b16f3e47df8401864fe81997e415b861"}
+{"timestamp":"2026-02-17T16:45:58.792Z","message":"No addr record","name":"test.divicompany.eth"}
+{"timestamp":"2026-02-17T16:45:58.793Z","message":"CCIP-Read request","sender":"0x6Dea337D5BDBCe2DB66196AbA020bC02e6193b2d","callDataLen":458}
+{"timestamp":"2026-02-17T16:45:58.793Z","message":"Resolving","name":"test.divicompany.eth","node":"0x100c605da9c627fef49b114d682ff596b16f3e47df8401864fe81997e415b861"}
+{"timestamp":"2026-02-17T16:45:58.793Z","message":"No contenthash record","name":"test.divicompany.eth"}
+{"timestamp":"2026-02-17T16:47:08.066Z","message":"CCIP-Read request","sender":"0x6Dea337D5BDBCe2DB66196AbA020bC02e6193b2d","callDataLen":458}
+{"timestamp":"2026-02-17T16:47:08.068Z","message":"Resolving","name":"test.divicompany.eth","node":"0x100c605da9c627fef49b114d682ff596b16f3e47df8401864fe81997e415b861"}
+{"timestamp":"2026-02-17T16:47:08.068Z","message":"No addr record","name":"test.divicompany.eth"}
+{"timestamp":"2026-02-17T16:47:08.073Z","message":"CCIP-Read request","sender":"0x6Dea337D5BDBCe2DB66196AbA020bC02e6193b2d","callDataLen":650}
+{"timestamp":"2026-02-17T16:47:08.076Z","message":"Resolving","name":"test.divicompany.eth","node":"0x100c605da9c627fef49b114d682ff596b16f3e47df8401864fe81997e415b861"}
+{"timestamp":"2026-02-17T16:47:08.076Z","message":"No text record","name":"test.divicompany.eth","key":"org.telegram"}
+{"timestamp":"2026-02-17T16:47:08.078Z","message":"CCIP-Read request","sender":"0x6Dea337D5BDBCe2DB66196AbA020bC02e6193b2d","callDataLen":650}
+{"timestamp":"2026-02-17T16:47:08.080Z","message":"Resolving","name":"test.divicompany.eth","node":"0x100c605da9c627fef49b114d682ff596b16f3e47df8401864fe81997e415b861"}
+{"timestamp":"2026-02-17T16:47:08.081Z","message":"No text record","name":"test.divicompany.eth","key":"com.twitter"}
+{"timestamp":"2026-02-17T16:47:08.082Z","message":"CCIP-Read request","sender":"0x6Dea337D5BDBCe2DB66196AbA020bC02e6193b2d","callDataLen":650}
+{"timestamp":"2026-02-17T16:47:08.084Z","message":"Resolving","name":"test.divicompany.eth","node":"0x100c605da9c627fef49b114d682ff596b16f3e47df8401864fe81997e415b861"}
+{"timestamp":"2026-02-17T16:47:08.084Z","message":"No text record","name":"test.divicompany.eth","key":"com.github"}
+{"timestamp":"2026-02-17T16:47:08.085Z","message":"CCIP-Read request","sender":"0x6Dea337D5BDBCe2DB66196AbA020bC02e6193b2d","callDataLen":650}
+{"timestamp":"2026-02-17T16:47:08.085Z","message":"Resolving","name":"test.divicompany.eth","node":"0x100c605da9c627fef49b114d682ff596b16f3e47df8401864fe81997e415b861"}
+{"timestamp":"2026-02-17T16:47:08.085Z","message":"No text record","name":"test.divicompany.eth","key":"com.discord"}
+{"timestamp":"2026-02-17T16:47:08.086Z","message":"CCIP-Read request","sender":"0x6Dea337D5BDBCe2DB66196AbA020bC02e6193b2d","callDataLen":650}
+{"timestamp":"2026-02-17T16:47:08.088Z","message":"Resolving","name":"test.divicompany.eth","node":"0x100c605da9c627fef49b114d682ff596b16f3e47df8401864fe81997e415b861"}
+{"timestamp":"2026-02-17T16:47:08.088Z","message":"No text record","name":"test.divicompany.eth","key":"email"}
+{"timestamp":"2026-02-17T16:47:08.089Z","message":"CCIP-Read request","sender":"0x6Dea337D5BDBCe2DB66196AbA020bC02e6193b2d","callDataLen":650}
+{"timestamp":"2026-02-17T16:47:08.090Z","message":"Resolving","name":"test.divicompany.eth","node":"0x100c605da9c627fef49b114d682ff596b16f3e47df8401864fe81997e415b861"}
+{"timestamp":"2026-02-17T16:47:08.090Z","message":"No text record","name":"test.divicompany.eth","key":"description"}
+{"timestamp":"2026-02-17T16:47:08.091Z","message":"CCIP-Read request","sender":"0x6Dea337D5BDBCe2DB66196AbA020bC02e6193b2d","callDataLen":650}
+{"timestamp":"2026-02-17T16:47:08.092Z","message":"Resolving","name":"test.divicompany.eth","node":"0x100c605da9c627fef49b114d682ff596b16f3e47df8401864fe81997e415b861"}
+{"timestamp":"2026-02-17T16:47:08.092Z","message":"No text record","name":"test.divicompany.eth","key":"url"}
+{"timestamp":"2026-02-17T16:47:08.092Z","message":"CCIP-Read request","sender":"0x6Dea337D5BDBCe2DB66196AbA020bC02e6193b2d","callDataLen":650}
+{"timestamp":"2026-02-17T16:47:08.093Z","message":"Resolving","name":"test.divicompany.eth","node":"0x100c605da9c627fef49b114d682ff596b16f3e47df8401864fe81997e415b861"}
+{"timestamp":"2026-02-17T16:47:08.093Z","message":"No text record","name":"test.divicompany.eth","key":"location"}
+{"timestamp":"2026-02-17T16:47:08.094Z","message":"CCIP-Read request","sender":"0x6Dea337D5BDBCe2DB66196AbA020bC02e6193b2d","callDataLen":650}
+{"timestamp":"2026-02-17T16:47:08.094Z","message":"Resolving","name":"test.divicompany.eth","node":"0x100c605da9c627fef49b114d682ff596b16f3e47df8401864fe81997e415b861"}
+{"timestamp":"2026-02-17T16:47:08.094Z","message":"No text record","name":"test.divicompany.eth","key":"avatar"}
+{"timestamp":"2026-02-17T16:47:08.095Z","message":"CCIP-Read request","sender":"0x6Dea337D5BDBCe2DB66196AbA020bC02e6193b2d","callDataLen":650}
+{"timestamp":"2026-02-17T16:47:08.095Z","message":"Resolving","name":"test.divicompany.eth","node":"0x100c605da9c627fef49b114d682ff596b16f3e47df8401864fe81997e415b861"}
+{"timestamp":"2026-02-17T16:47:08.096Z","message":"No text record","name":"test.divicompany.eth","key":"name"}
+{"timestamp":"2026-02-17T16:47:08.096Z","message":"CCIP-Read request","sender":"0x6Dea337D5BDBCe2DB66196AbA020bC02e6193b2d","callDataLen":522}
+{"timestamp":"2026-02-17T16:47:08.097Z","message":"Resolving","name":"test.divicompany.eth","node":"0x100c605da9c627fef49b114d682ff596b16f3e47df8401864fe81997e415b861"}
+{"timestamp":"2026-02-17T16:47:08.097Z","message":"No addr for coinType","name":"test.divicompany.eth","coinType":0}
+{"timestamp":"2026-02-17T16:47:08.098Z","message":"CCIP-Read request","sender":"0x6Dea337D5BDBCe2DB66196AbA020bC02e6193b2d","callDataLen":522}
+{"timestamp":"2026-02-17T16:47:08.098Z","message":"Resolving","name":"test.divicompany.eth","node":"0x100c605da9c627fef49b114d682ff596b16f3e47df8401864fe81997e415b861"}
+{"timestamp":"2026-02-17T16:47:08.098Z","message":"No addr for coinType","name":"test.divicompany.eth","coinType":501}
+{"timestamp":"2026-02-17T16:47:08.099Z","message":"CCIP-Read request","sender":"0x6Dea337D5BDBCe2DB66196AbA020bC02e6193b2d","callDataLen":522}
+{"timestamp":"2026-02-17T16:47:08.100Z","message":"Resolving","name":"test.divicompany.eth","node":"0x100c605da9c627fef49b114d682ff596b16f3e47df8401864fe81997e415b861"}
+{"timestamp":"2026-02-17T16:47:08.100Z","message":"No addr for coinType","name":"test.divicompany.eth","coinType":2147483658}
+{"timestamp":"2026-02-17T16:47:08.101Z","message":"CCIP-Read request","sender":"0x6Dea337D5BDBCe2DB66196AbA020bC02e6193b2d","callDataLen":522}
+{"timestamp":"2026-02-17T16:47:08.101Z","message":"Resolving","name":"test.divicompany.eth","node":"0x100c605da9c627fef49b114d682ff596b16f3e47df8401864fe81997e415b861"}
+{"timestamp":"2026-02-17T16:47:08.101Z","message":"No addr for coinType","name":"test.divicompany.eth","coinType":2147525809}
+{"timestamp":"2026-02-17T16:47:08.102Z","message":"CCIP-Read request","sender":"0x6Dea337D5BDBCe2DB66196AbA020bC02e6193b2d","callDataLen":522}
+{"timestamp":"2026-02-17T16:47:08.102Z","message":"Resolving","name":"test.divicompany.eth","node":"0x100c605da9c627fef49b114d682ff596b16f3e47df8401864fe81997e415b861"}
+{"timestamp":"2026-02-17T16:47:08.103Z","message":"No addr for coinType","name":"test.divicompany.eth","coinType":2147483648}
+{"timestamp":"2026-02-17T16:47:08.104Z","message":"CCIP-Read request","sender":"0x6Dea337D5BDBCe2DB66196AbA020bC02e6193b2d","callDataLen":522}
+{"timestamp":"2026-02-17T16:47:08.104Z","message":"Resolving","name":"test.divicompany.eth","node":"0x100c605da9c627fef49b114d682ff596b16f3e47df8401864fe81997e415b861"}
+{"timestamp":"2026-02-17T16:47:08.104Z","message":"No addr for coinType","name":"test.divicompany.eth","coinType":2147483785}
+{"timestamp":"2026-02-17T16:47:08.105Z","message":"CCIP-Read request","sender":"0x6Dea337D5BDBCe2DB66196AbA020bC02e6193b2d","callDataLen":522}
+{"timestamp":"2026-02-17T16:47:08.106Z","message":"Resolving","name":"test.divicompany.eth","node":"0x100c605da9c627fef49b114d682ff596b16f3e47df8401864fe81997e415b861"}
+{"timestamp":"2026-02-17T16:47:08.106Z","message":"No addr for coinType","name":"test.divicompany.eth","coinType":2147542792}
+{"timestamp":"2026-02-17T16:47:08.107Z","message":"CCIP-Read request","sender":"0x6Dea337D5BDBCe2DB66196AbA020bC02e6193b2d","callDataLen":522}
+{"timestamp":"2026-02-17T16:47:08.107Z","message":"Resolving","name":"test.divicompany.eth","node":"0x100c605da9c627fef49b114d682ff596b16f3e47df8401864fe81997e415b861"}
+{"timestamp":"2026-02-17T16:47:08.107Z","message":"No addr for coinType","name":"test.divicompany.eth","coinType":2148018000}
+{"timestamp":"2026-02-17T16:47:08.108Z","message":"CCIP-Read request","sender":"0x6Dea337D5BDBCe2DB66196AbA020bC02e6193b2d","callDataLen":522}
+{"timestamp":"2026-02-17T16:47:08.108Z","message":"Resolving","name":"test.divicompany.eth","node":"0x100c605da9c627fef49b114d682ff596b16f3e47df8401864fe81997e415b861"}
+{"timestamp":"2026-02-17T16:47:08.109Z","message":"No addr for coinType","name":"test.divicompany.eth","coinType":2147525868}
+{"timestamp":"2026-02-17T16:47:08.109Z","message":"CCIP-Read request","sender":"0x6Dea337D5BDBCe2DB66196AbA020bC02e6193b2d","callDataLen":522}
+{"timestamp":"2026-02-17T16:47:08.110Z","message":"Resolving","name":"test.divicompany.eth","node":"0x100c605da9c627fef49b114d682ff596b16f3e47df8401864fe81997e415b861"}
+{"timestamp":"2026-02-17T16:47:08.110Z","message":"No addr for coinType","name":"test.divicompany.eth","coinType":2147492101}
+{"timestamp":"2026-02-17T16:47:08.110Z","message":"CCIP-Read request","sender":"0x6Dea337D5BDBCe2DB66196AbA020bC02e6193b2d","callDataLen":522}
+{"timestamp":"2026-02-17T16:47:08.111Z","message":"Resolving","name":"test.divicompany.eth","node":"0x100c605da9c627fef49b114d682ff596b16f3e47df8401864fe81997e415b861"}
+{"timestamp":"2026-02-17T16:47:08.111Z","message":"Unknown selector","selector":"0x2203ab56"}
+{"timestamp":"2026-02-17T16:47:08.112Z","message":"CCIP-Read request","sender":"0x6Dea337D5BDBCe2DB66196AbA020bC02e6193b2d","callDataLen":458}
+{"timestamp":"2026-02-17T16:47:08.112Z","message":"Resolving","name":"test.divicompany.eth","node":"0x100c605da9c627fef49b114d682ff596b16f3e47df8401864fe81997e415b861"}
+{"timestamp":"2026-02-17T16:47:08.112Z","message":"No addr record","name":"test.divicompany.eth"}
+{"timestamp":"2026-02-17T16:47:08.113Z","message":"CCIP-Read request","sender":"0x6Dea337D5BDBCe2DB66196AbA020bC02e6193b2d","callDataLen":458}
+{"timestamp":"2026-02-17T16:47:08.113Z","message":"Resolving","name":"test.divicompany.eth","node":"0x100c605da9c627fef49b114d682ff596b16f3e47df8401864fe81997e415b861"}
+{"timestamp":"2026-02-17T16:47:08.113Z","message":"No contenthash record","name":"test.divicompany.eth"}
+{"timestamp":"2026-02-17T16:47:17.780Z","message":"CCIP-Read request","sender":"0x6Dea337D5BDBCe2DB66196AbA020bC02e6193b2d","callDataLen":458}
+{"timestamp":"2026-02-17T16:47:17.781Z","message":"Resolving","name":"test.divicompany.eth","node":"0x100c605da9c627fef49b114d682ff596b16f3e47df8401864fe81997e415b861"}
+{"timestamp":"2026-02-17T16:47:17.781Z","message":"No addr record","name":"test.divicompany.eth"}
+{"timestamp":"2026-02-17T16:47:17.782Z","message":"CCIP-Read request","sender":"0x6Dea337D5BDBCe2DB66196AbA020bC02e6193b2d","callDataLen":458}
+{"timestamp":"2026-02-17T16:47:17.783Z","message":"Resolving","name":"test3.divicompany.eth","node":"0x6c798ec06cf38b9b1286f8d6c9e7545f2e0dc282082ad1f886cdb94b0bb202b9"}
+{"timestamp":"2026-02-17T16:47:17.784Z","message":"No addr record","name":"test3.divicompany.eth"}
+{"timestamp":"2026-02-17T16:47:21.481Z","message":"CCIP-Read request","sender":"0x6Dea337D5BDBCe2DB66196AbA020bC02e6193b2d","callDataLen":458}
+{"timestamp":"2026-02-17T16:47:21.483Z","message":"Resolving","name":"test.divicompany.eth","node":"0x100c605da9c627fef49b114d682ff596b16f3e47df8401864fe81997e415b861"}
+{"timestamp":"2026-02-17T16:47:21.483Z","message":"No addr record","name":"test.divicompany.eth"}
+{"timestamp":"2026-02-17T16:47:21.495Z","message":"CCIP-Read request","sender":"0x6Dea337D5BDBCe2DB66196AbA020bC02e6193b2d","callDataLen":458}
+{"timestamp":"2026-02-17T16:47:21.496Z","message":"Resolving","name":"test3.divicompany.eth","node":"0x6c798ec06cf38b9b1286f8d6c9e7545f2e0dc282082ad1f886cdb94b0bb202b9"}
+{"timestamp":"2026-02-17T16:47:21.496Z","message":"No addr record","name":"test3.divicompany.eth"}

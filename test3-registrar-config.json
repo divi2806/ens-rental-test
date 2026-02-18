@@ -1,0 +1,11 @@
+{
+  "domain": "test3.divicompany.eth",
+  "domainHash": "0x6c798ec06cf38b9b1286f8d6c9e7545f2e0dc282082ad1f886cdb94b0bb202b9",
+  "registrarProxy": "0xeBa8b11aD69abD273A05b9F5AE64FE7381fd2755",
+  "registrarImplementation": "0x6031bb45a2B1a2BDd4991164c72721f29936dbeB",
+  "rentalPrice": "0.001",
+  "nameWrapper": "0x0635513f179D50A207757E05759CbD106d7dFcE8",
+  "owner": "0x834163C217FF4dAeE028f27cEEb6a7fAB51B02b7",
+  "deployedAt": "2026-02-13T13:05:01.169Z",
+  "network": "sepolia"
+}

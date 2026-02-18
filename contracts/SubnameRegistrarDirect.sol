@@ -1,9 +1,13 @@
 // SPDX-License-Identifier: MIT
 pragma solidity ^0.8.22;
 
+import "@openzeppelin/contracts-upgradeable/proxy/utils/Initializable.sol";
+import "@openzeppelin/contracts-upgradeable/proxy/utils/UUPSUpgradeable.sol";
+import "@openzeppelin/contracts-upgradeable/access/OwnableUpgradeable.sol";
+
 /**
  * @title SubnameRegistrarDirect
- * @dev Rent ENS subdomains using direct ENS Registry (no wrapping needed)
+ * @dev Rent ENS subdomains using direct ENS Registry (no wrapping needed) - Upgradeable via UUPS
  * Works with domains owned directly in ENS Registry
  * 
  * Example: You own divi.eth
@@ -19,21 +23,21 @@ interface IENSRegistry {
     
     function owner(bytes32 node) external view returns (address);
     function setOwner(bytes32 node, address owner) external;
+    function setResolver(bytes32 node, address resolver) external;
 }
 
 interface IResolver {
     function setAddr(bytes32 node, address addr) external;
 }
 
-contract SubnameRegistrarDirect {
-    IENSRegistry public immutable ensRegistry;
+contract SubnameRegistrarDirect is Initializable, UUPSUpgradeable, OwnableUpgradeable {
+    IENSRegistry public ensRegistry;
     IResolver public resolver;
-    bytes32 public immutable parentNode;
-    address public owner;
+    bytes32 public parentNode;
     
     // Rental pricing
-    uint256 public rentalPrice = 0.001 ether;
-    uint256 public rentalDuration = 365 days;
+    uint256 public rentalPrice;
+    uint256 public rentalDuration;
     
     // Track rentals
     struct Rental {
@@ -62,21 +66,33 @@ contract SubnameRegistrarDirect {
     
     event PriceUpdated(uint256 newPrice);
     event FundsWithdrawn(address indexed to, uint256 amount);
-    
-    modifier onlyOwner() {
-        require(msg.sender == owner, "Only owner");
-        _;
+
+    /// @custom:oz-upgrades-unsafe-allow constructor
+    constructor() {
+        _disableInitializers();
     }
-    
-    constructor(
+
+    /**
+     * @dev Initializes the contract (replaces constructor for upgradeable pattern)
+     * @param _ensRegistry Address of the ENS Registry contract
+     * @param _resolver Address of the resolver contract
+     * @param _parentNode Namehash of the parent domain
+     * @param _owner Contract owner address
+     */
+    function initialize(
         address _ensRegistry,
         address _resolver,
-        bytes32 _parentNode
-    ) {
+        bytes32 _parentNode,
+        address _owner
+    ) public initializer {
+        __UUPSUpgradeable_init();
+        __Ownable_init(_owner);
+        
         ensRegistry = IENSRegistry(_ensRegistry);
         resolver = IResolver(_resolver);
         parentNode = _parentNode;
-        owner = msg.sender;
+        rentalPrice = 0.001 ether;
+        rentalDuration = 365 days;
     }
     
     /**
@@ -208,17 +224,15 @@ contract SubnameRegistrarDirect {
         uint256 balance = address(this).balance;
         require(balance > 0, "No funds");
         
-        payable(owner).transfer(balance);
-        emit FundsWithdrawn(owner, balance);
+        payable(owner()).transfer(balance);
+        emit FundsWithdrawn(owner(), balance);
     }
-    
+
     /**
-     * @dev Transfer ownership
+     * @dev Function that authorizes an upgrade to a new implementation
+     * Required by UUPSUpgradeable
      */
-    function transferOwnership(address newOwner) external onlyOwner {
-        require(newOwner != address(0), "Invalid address");
-        owner = newOwner;
-    }
+    function _authorizeUpgrade(address newImplementation) internal override onlyOwner {}
     
     receive() external payable {}
 }

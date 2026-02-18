@@ -1,0 +1,339 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Set ENS Records - entity.id</title>
+  <script src="https://cdn.ethers.io/lib/ethers-5.7.2.umd.min.js"></script>
+  <style>
+    body {
+      font-family: system-ui, -apple-system, sans-serif;
+      max-width: 600px;
+      margin: 50px auto;
+      padding: 20px;
+      background: #f5f5f5;
+    }
+    .container {
+      background: white;
+      padding: 30px;
+      border-radius: 12px;
+      box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+    }
+    h1 {
+      color: #333;
+      margin-bottom: 10px;
+    }
+    .subtitle {
+      color: #666;
+      margin-bottom: 30px;
+    }
+    label {
+      display: block;
+      margin-bottom: 5px;
+      font-weight: 500;
+      color: #333;
+    }
+    input {
+      width: 100%;
+      padding: 10px;
+      margin-bottom: 20px;
+      border: 1px solid #ddd;
+      border-radius: 6px;
+      font-size: 14px;
+      box-sizing: border-box;
+    }
+    button {
+      width: 100%;
+      padding: 12px;
+      background: #5298FF;
+      color: white;
+      border: none;
+      border-radius: 6px;
+      font-size: 16px;
+      font-weight: 500;
+      cursor: pointer;
+      margin-bottom: 10px;
+    }
+    button:hover {
+      background: #4080dd;
+    }
+    button:disabled {
+      background: #ccc;
+      cursor: not-allowed;
+    }
+    .status {
+      padding: 12px;
+      border-radius: 6px;
+      margin-top: 20px;
+      display: none;
+    }
+    .status.success {
+      background: #d4edda;
+      color: #155724;
+      border: 1px solid #c3e6cb;
+      display: block;
+    }
+    .status.error {
+      background: #f8d7da;
+      color: #721c24;
+      border: 1px solid #f5c6cb;
+      display: block;
+    }
+    .status.info {
+      background: #d1ecf1;
+      color: #0c5460;
+      border: 1px solid #bee5eb;
+      display: block;
+    }
+    .wallet-info {
+      background: #f8f9fa;
+      padding: 15px;
+      border-radius: 6px;
+      margin-bottom: 20px;
+      font-size: 14px;
+    }
+    .wallet-info strong {
+      display: block;
+      margin-bottom: 5px;
+    }
+    code {
+      background: #f5f5f5;
+      padding: 2px 6px;
+      border-radius: 3px;
+      font-size: 13px;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>🌐 Set ENS Records</h1>
+    <p class="subtitle">For entity.id subdomains using DatabaseResolver</p>
+
+    <div id="walletInfo" class="wallet-info" style="display:none;">
+      <strong>Connected Wallet:</strong>
+      <code id="walletAddress"></code>
+    </div>
+
+    <button id="connectBtn" onclick="connect()">Connect Wallet</button>
+
+    <div id="formSection" style="display:none;">
+      <label for="name">ENS Name</label>
+      <input 
+        type="text" 
+        id="name" 
+        placeholder="test.entity.id" 
+        value="test.entity.id"
+      />
+
+      <label for="address">ETH Address</label>
+      <input 
+        type="text" 
+        id="address" 
+        placeholder="0x..."
+      />
+
+      <label for="description">Description (optional)</label>
+      <input 
+        type="text" 
+        id="description" 
+        placeholder="My test subdomain"
+      />
+
+      <button onclick="setAddressRecord()">Set Address Record</button>
+      <button onclick="setTextRecord()">Set Description (Text Record)</button>
+    </div>
+
+    <div id="status" class="status"></div>
+
+    <div style="margin-top: 30px; padding-top: 20px; border-top: 1px solid #eee; font-size: 14px; color: #666;">
+      <strong>How it works:</strong>
+      <ol style="margin-top: 10px; padding-left: 20px;">
+        <li>Connect your wallet (must be owner of the subdomain)</li>
+        <li>Sign a message (EIP-712) with your record data</li>
+        <li>Send signed message to gateway via CCIP-Read</li>
+        <li>Gateway stores in database and returns signed proof</li>
+        <li>Records resolve via DatabaseResolver ✓</li>
+      </ol>
+      <p style="margin-top: 10px;">
+        <strong>Note:</strong> This is a proof-of-concept. For production, integrate with your gateway's authentication system.
+      </p>
+    </div>
+  </div>
+
+  <script>
+    const SEPOLIA_CHAIN_ID = 11155111;
+    const DATABASE_RESOLVER = '0x82824646121ea4c48613ba9feff3c9372036324f';
+    const GATEWAY_URL = 'https://seashell-app-sajbl.ondigitalocean.app';
+    
+    let provider, signer, account;
+
+    async function connect() {
+      const statusEl = document.getElementById('status');
+      statusEl.className = 'status info';
+      statusEl.textContent = 'Connecting to wallet...';
+
+      try {
+        if (!window.ethereum) {
+          throw new Error('MetaMask not installed');
+        }
+
+        provider = new ethers.providers.Web3Provider(window.ethereum);
+        await provider.send('eth_requestAccounts', []);
+        signer = provider.getSigner();
+        account = await signer.getAddress();
+
+        const network = await provider.getNetwork();
+        if (network.chainId !== SEPOLIA_CHAIN_ID) {
+          throw new Error('Please switch to Sepolia network');
+        }
+
+        document.getElementById('walletAddress').textContent = account;
+        document.getElementById('walletInfo').style.display = 'block';
+        document.getElementById('connectBtn').style.display = 'none';
+        document.getElementById('formSection').style.display = 'block';
+        document.getElementById('address').value = account;
+
+        statusEl.className = 'status success';
+        statusEl.textContent = '✓ Wallet connected successfully!';
+        setTimeout(() => statusEl.style.display = 'none', 3000);
+      } catch (error) {
+        statusEl.className = 'status error';
+        statusEl.textContent = `Error: ${error.message}`;
+      }
+    }
+
+    async function setAddressRecord() {
+      const statusEl = document.getElementById('status');
+      statusEl.className = 'status info';
+      statusEl.textContent = 'Signing message...';
+
+      try {
+        const name = document.getElementById('name').value;
+        const address = document.getElementById('address').value;
+
+        if (!ethers.utils.isAddress(address)) {
+          throw new Error('Invalid address');
+        }
+
+        const node = ethers.utils.namehash(name);
+
+        // EIP-712 Domain
+        const domain = {
+          name: 'DatabaseResolver',
+          version: '1',
+          chainId: SEPOLIA_CHAIN_ID,
+          verifyingContract: DATABASE_RESOLVER
+        };
+
+        // EIP-712 Types
+        const types = {
+          SetAddr: [
+            { name: 'node', type: 'bytes32' },
+            { name: 'addr', type: 'address' }
+          ]
+        };
+
+        // EIP-712 Value
+        const value = {
+          node: node,
+          addr: address
+        };
+
+        // Sign the typed data
+        const signature = await signer._signTypedData(domain, types, value);
+
+        statusEl.textContent = 'Sending to gateway...';
+
+        // NOTE: This is a simplified example
+        // Your actual gateway requires proper authentication and CCIP-Read flow
+        console.log('Signed message:', {
+          domain,
+          types,
+          value,
+          signature
+        });
+
+        statusEl.className = 'status success';
+        statusEl.innerHTML = `
+          ✓ Message signed successfully!<br><br>
+          <strong>Next steps:</strong><br>
+          1. Send this signed message to your gateway's CCIP-Read endpoint<br>
+          2. Gateway verifies signature and stores in database<br>
+          3. Record becomes resolvable via DatabaseResolver<br><br>
+          <strong>Signature:</strong><br>
+          <code style="word-break: break-all; display: block; margin-top: 5px;">${signature}</code>
+        `;
+
+        // In production, you would send this to your gateway API:
+        // const response = await fetch(`${GATEWAY_URL}/ccip-read`, {
+        //   method: 'POST',
+        //   headers: { 'Content-Type': 'application/json' },
+        //   body: JSON.stringify({ domain, types, value, signature })
+        // });
+
+      } catch (error) {
+        statusEl.className = 'status error';
+        statusEl.textContent = `Error: ${error.message}`;
+      }
+    }
+
+    async function setTextRecord() {
+      const statusEl = document.getElementById('status');
+      statusEl.className = 'status info';
+      statusEl.textContent = 'Signing message...';
+
+      try {
+        const name = document.getElementById('name').value;
+        const description = document.getElementById('description').value;
+
+        const node = ethers.utils.namehash(name);
+
+        // EIP-712 Domain
+        const domain = {
+          name: 'DatabaseResolver',
+          version: '1',
+          chainId: SEPOLIA_CHAIN_ID,
+          verifyingContract: DATABASE_RESOLVER
+        };
+
+        // EIP-712 Types
+        const types = {
+          SetText: [
+            { name: 'node', type: 'bytes32' },
+            { name: 'key', type: 'string' },
+            { name: 'value', type: 'string' }
+          ]
+        };
+
+        // EIP-712 Value
+        const value = {
+          node: node,
+          key: 'description',
+          value: description
+        };
+
+        // Sign the typed data
+        const signature = await signer._signTypedData(domain, types, value);
+
+        statusEl.className = 'status success';
+        statusEl.innerHTML = `
+          ✓ Message signed successfully!<br><br>
+          <strong>Signature:</strong><br>
+          <code style="word-break: break-all; display: block; margin-top: 5px;">${signature}</code>
+        `;
+
+        console.log('Signed text record:', {
+          domain,
+          types,
+          value,
+          signature
+        });
+
+      } catch (error) {
+        statusEl.className = 'status error';
+        statusEl.textContent = `Error: ${error.message}`;
+      }
+    }
+  </script>
+</body>
+</html>

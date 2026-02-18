@@ -3,11 +3,14 @@ pragma solidity ^0.8.22;
 
 import "@openzeppelin/contracts/utils/cryptography/ECDSA.sol";
 import "@openzeppelin/contracts/utils/cryptography/MessageHashUtils.sol";
-import "@openzeppelin/contracts/utils/introspection/ERC165.sol";
+import "@openzeppelin/contracts-upgradeable/utils/introspection/ERC165Upgradeable.sol";
+import "@openzeppelin/contracts-upgradeable/proxy/utils/Initializable.sol";
+import "@openzeppelin/contracts-upgradeable/proxy/utils/UUPSUpgradeable.sol";
+import "@openzeppelin/contracts-upgradeable/access/OwnableUpgradeable.sol";
 
 /**
  * @title OffchainResolver
- * @dev ENSIP-10 wildcard resolver using CCIP-Read (ERC-3668)
+ * @dev ENSIP-10 wildcard resolver using CCIP-Read (ERC-3668) - Upgradeable via UUPS
  *
  * When ENS resolves a name like `1.test.divicompany.eth`, the resolver
  * reverts with OffchainLookup, directing the client to a gateway.
@@ -21,15 +24,18 @@ interface IExtendedResolver {
     function resolve(bytes memory name, bytes memory data) external view returns (bytes memory);
 }
 
-contract OffchainResolver is IExtendedResolver, ERC165 {
+contract OffchainResolver is 
+    Initializable, 
+    IExtendedResolver, 
+    ERC165Upgradeable, 
+    UUPSUpgradeable, 
+    OwnableUpgradeable 
+{
     // Gateway URL template (CCIP-Read standard: {sender} and {data} are replaced by client)
     string public url;
 
     // Approved signers whose gateway responses are trusted
     mapping(address => bool) public signers;
-
-    // Contract owner
-    address public owner;
 
     // ERC-3668: OffchainLookup(address sender, string[] urls, bytes callData, bytes4 callbackFunction, bytes extraData)
     error OffchainLookup(
@@ -42,16 +48,24 @@ contract OffchainResolver is IExtendedResolver, ERC165 {
 
     event SignerUpdated(address indexed signer, bool approved);
     event UrlUpdated(string newUrl);
-    event OwnershipTransferred(address indexed previousOwner, address indexed newOwner);
 
-    modifier onlyOwner() {
-        require(msg.sender == owner, "Only owner");
-        _;
+    /// @custom:oz-upgrades-unsafe-allow constructor
+    constructor() {
+        _disableInitializers();
     }
 
-    constructor(string memory _url, address _signer) {
+    /**
+     * @dev Initializes the contract (replaces constructor for upgradeable pattern)
+     * @param _url Gateway URL template
+     * @param _signer Initial approved signer address
+     * @param _owner Contract owner address
+     */
+    function initialize(string memory _url, address _signer, address _owner) public initializer {
+        __ERC165_init();
+        __UUPSUpgradeable_init();
+        __Ownable_init(_owner);
+        
         url = _url;
-        owner = msg.sender;
         signers[_signer] = true;
         emit SignerUpdated(_signer, true);
     }
@@ -150,11 +164,11 @@ contract OffchainResolver is IExtendedResolver, ERC165 {
         emit SignerUpdated(_signer, _approved);
     }
 
-    function transferOwnership(address newOwner) external onlyOwner {
-        require(newOwner != address(0), "Invalid address");
-        emit OwnershipTransferred(owner, newOwner);
-        owner = newOwner;
-    }
+    /**
+     * @dev Function that authorizes an upgrade to a new implementation
+     * Required by UUPSUpgradeable
+     */
+    function _authorizeUpgrade(address newImplementation) internal override onlyOwner {}
 
     // --- ERC-165 ---
 

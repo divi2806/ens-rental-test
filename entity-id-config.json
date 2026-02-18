@@ -1,0 +1,14 @@
+{
+  "domain": "entity.id",
+  "domainHash": "0x44ba1c7fa78544d7fa6731bcaa83219e3c14ddb8893898b7e7eb50d9927d9dca",
+  "safeAddress": "0x834163C217FF4dAeE028f27cEEb6a7fAB51B02b7",
+  "databaseResolverAddress": "0x82824646121ea4c48613ba9feff3c9372036324f",
+  "wrapped": false,
+  "directOwnership": true,
+  "note": "DNS-imported name, owned in ENS Registry by Safe multisig. Uses setApprovalForAll NOT setOwner.",
+  "registrarProxy": "0x67B4DDd24b2f00285018530ab72127BCEAFbFADd",
+  "registrarImpl": "0x57d082307Aeff174C41547f0B03C63E95952cB8a",
+  "rentalPrice": "0.001",
+  "deployedAt": "2026-02-18T11:17:03.107Z",
+  "deployedBy": "0x8d674BaEcbA928C9d750f66b0b4A35b83cAFd595"
+}

@@ -1,9 +1,13 @@
 // SPDX-License-Identifier: MIT
 pragma solidity ^0.8.22;
 
+import "@openzeppelin/contracts-upgradeable/proxy/utils/Initializable.sol";
+import "@openzeppelin/contracts-upgradeable/proxy/utils/UUPSUpgradeable.sol";
+import "@openzeppelin/contracts-upgradeable/access/OwnableUpgradeable.sol";
+
 /**
  * @title SubnameRegistrar
- * @dev Rent/Sell ENS subdomains using Name Wrapper
+ * @dev Rent/Sell ENS subdomains using Name Wrapper - Upgradeable via UUPS
  * Based on: https://docs.ens.domains/wrapper/creating-subname-registrar
  * 
  * Example: You own divicompany.eth
@@ -38,19 +42,16 @@ interface INameWrapper {
         returns (address owner, uint32 fuses, uint64 expiry);
 }
 
-contract SubnameRegistrar {
+contract SubnameRegistrar is Initializable, UUPSUpgradeable, OwnableUpgradeable {
     // Name Wrapper contract
-    INameWrapper public immutable nameWrapper;
+    INameWrapper public nameWrapper;
     
     // Your parent domain (e.g., namehash of divicompany.eth)
-    bytes32 public immutable parentNode;
-    
-    // Contract owner (you)
-    address public owner;
+    bytes32 public parentNode;
     
     // Rental pricing
-    uint256 public rentalPrice = 0.001 ether;  // Price per year
-    uint256 public rentalDuration = 365 days;  // 1 year
+    uint256 public rentalPrice;
+    uint256 public rentalDuration;
     
     // Fuses for subnames (guarantee rental period)
     // PARENT_CANNOT_CONTROL = 0x10000 - Parent cannot take back subdomain
@@ -83,19 +84,30 @@ contract SubnameRegistrar {
     
     event PriceUpdated(uint256 newPrice);
     event FundsWithdrawn(address indexed to, uint256 amount);
-    
-    modifier onlyOwner() {
-        require(msg.sender == owner, "Only owner");
-        _;
+
+    /// @custom:oz-upgrades-unsafe-allow constructor
+    constructor() {
+        _disableInitializers();
     }
-    
-    constructor(
+
+    /**
+     * @dev Initializes the contract (replaces constructor for upgradeable pattern)
+     * @param _nameWrapper Address of the Name Wrapper contract
+     * @param _parentNode Namehash of the parent domain
+     * @param _owner Contract owner address
+     */
+    function initialize(
         address _nameWrapper,
-        bytes32 _parentNode
-    ) {
+        bytes32 _parentNode,
+        address _owner
+    ) public initializer {
+        __UUPSUpgradeable_init();
+        __Ownable_init(_owner);
+        
         nameWrapper = INameWrapper(_nameWrapper);
         parentNode = _parentNode;
-        owner = msg.sender;
+        rentalPrice = 0.001 ether;
+        rentalDuration = 365 days;
     }
     
     /**
@@ -226,17 +238,15 @@ contract SubnameRegistrar {
         uint256 balance = address(this).balance;
         require(balance > 0, "No funds");
         
-        payable(owner).transfer(balance);
-        emit FundsWithdrawn(owner, balance);
+        payable(owner()).transfer(balance);
+        emit FundsWithdrawn(owner(), balance);
     }
-    
+
     /**
-     * @dev Transfer ownership (owner only)
+     * @dev Function that authorizes an upgrade to a new implementation
+     * Required by UUPSUpgradeable
      */
-    function transferOwnership(address newOwner) external onlyOwner {
-        require(newOwner != address(0), "Invalid address");
-        owner = newOwner;
-    }
+    function _authorizeUpgrade(address newImplementation) internal override onlyOwner {}
     
     receive() external payable {}
 }
